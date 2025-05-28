@@ -30,7 +30,8 @@
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
       "@routes/*": ["routes/*"],
-      "@types/*": ["types/*"]
+      "@types/*": ["types/*"],
+      "@features/*": ["features/*"]
     }
   },
   "include": ["src"]
