@@ -1,5 +1,16 @@
 export function Navbar() {
   return <div id="navbar">
+
+    <div id="navbar_top">
+      
+    </div>
+    
+  </div>
+}
+
+/*
+export function Navbar() {
+  return <div id="navbar">
     <div className="navbar bg-base-100 shadow-sm" id="navbar_base">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">daisyUI</a>
@@ -32,3 +43,4 @@ export function Navbar() {
     
   </div>
 }
+*/

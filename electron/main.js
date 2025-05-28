@@ -9,7 +9,12 @@ function createWindow() {
             nodeIntegration:false,
             contextIsolation:true,
             preload: path.join(__dirname, 'preload.js')
-        }
+        },
+        autoHideMenuBar: true,
+
+        minWidth:960,
+        minHeight:540,
+        
     })
 
     window.loadFile(path.join(__dirname, '../react-ui/dist/index.html'))

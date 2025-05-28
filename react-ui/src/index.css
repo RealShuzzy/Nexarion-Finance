@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 #navbar{
-  background-color: aqua;
   width: 300px;
   float: left;
 }
@@ -11,6 +10,8 @@
 #navbar_base{
   height: 100vh;
   width: 300px;
+  background-color: rgb(24,24,24);
+  border-right: solid 2px rgb(41,41,41);
 }
 
 #navbar_serchbar{
@@ -19,7 +20,7 @@
 
 
 #main{
-  background-color: brown;
+  background-color: rgb(31,31,31);
   height: 100vh;
   width: calc(100vw - 300px);
   margin-left: 300px;
