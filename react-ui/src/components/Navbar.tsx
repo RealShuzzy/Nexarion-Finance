@@ -1,10 +1,10 @@
 export function Navbar() {
   return <div id="navbar">
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm" id="navbar_base">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">daisyUI</a>
   </div>
-  <div className="flex gap-2">
+  <div className="flex gap-2" id="navbar_serchbar">
     <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">

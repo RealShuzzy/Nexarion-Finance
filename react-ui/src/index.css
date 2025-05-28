@@ -4,10 +4,25 @@
 
 #navbar{
   background-color: aqua;
+  width: 300px;
+  float: left;
 }
+
+#navbar_base{
+  height: 100vh;
+  width: 300px;
+}
+
+#navbar_serchbar{
+  width: 500px;
+}
+
 
 #main{
   background-color: brown;
+  height: 100vh;
+  width: calc(100vw - 300px);
+  margin-left: 300px;
 }
 
 #layout{
