@@ -2,8 +2,11 @@ import React from 'react'
 import { Navbar } from '../components/layout/Navbar'
 import CustomTitleBar from '../components/layout/Titlebar'
 import { Outlet } from 'react-router-dom';
+import useSystemTheme from '@components/common/useSystemTheme';
 
 export const Layout: React.FC = () => {
+  useSystemTheme()
+  
   const isElectron = typeof window !== 'undefined' && !!window.electronAPI;
   return (
     <div
@@ -13,7 +16,7 @@ export const Layout: React.FC = () => {
       {isElectron && <CustomTitleBar />}
       <div className="flex flex-row h-full">
         <Navbar />
-        <main className="flex-grow p-[10px] overflow-auto">
+        <main className="flex-grow dark:bg-gray-9 p-[10px] overflow-auto ">
           <Outlet />
         </main>
       </div>

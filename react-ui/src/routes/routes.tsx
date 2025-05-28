@@ -14,7 +14,7 @@ import User from '../features/user/User';
 import Settings from '@features/settings/Settings.tsx';
 
 // Routes
-export default function App() {
+export default function App_Routes() {
   return (
     <Routes>
       <Route path="/login" element={<LoginLayout/>}/>

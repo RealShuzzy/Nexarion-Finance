@@ -3,8 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: 25 130 220;
+  --color-primary: 108 149 247;
   --color-secondary: 25 190 220;
+
+  --color-gray-1: 226 226 226;
+  --color-gray-2: 198 198 198;
+  --color-gray-3: 171 171 171;
+  --color-gray-4: 145 145 145;
+  --color-gray-5: 119 119 119;
+  --color-gray-6: 94 94 94;
+  --color-gray-7: 71 71 71;
+  --color-gray-8: 48 48 48;
+  --color-gray-9: 38 38 38;
+  --color-gray-10: 27 27 27;
+  
+  --color-hover-l: 0 0 0;
+  --color-hover-d: 255 255 255;
 
   --color-background-dark: 24 24 24;
   --color-background: 31 31 31;

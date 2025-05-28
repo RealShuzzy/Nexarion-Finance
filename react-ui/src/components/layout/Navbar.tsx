@@ -3,12 +3,13 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Icons
-import { ChartNoAxesCombined, EllipsisVertical, Landmark, LayoutDashboard, LogOut, PanelLeft, Search, Settings, Sun, User, Wallet} from "lucide-react";
+import { ChartNoAxesCombined, EllipsisVertical, Landmark, LayoutDashboard, LogOut, PanelLeft, Search, Settings, User, Wallet} from "lucide-react";
 import logo from '@assets/Logo.svg'
 import banner_d from '@assets/Banner_Dark.svg'
 
 // Functions
 import { logout } from "@features/auth/logout";
+import ToggleTheme from "@components/common/ToggleTheme";
 
 
 const isElectron = typeof window !== 'undefined' && !!window.electronAPI; // Check if the window is an app or browser
@@ -54,49 +55,49 @@ export function Navbar() {
     <nav
       className={`
         transition-[width] duration-500 ease-in-out
+        relative float-left flex flex-col justify-center
+        ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} p-[10px]
+        bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px]
         ${styleType === "style1"
-         ? `relative float-left ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} w-[300px] bg-background-dark border-r-[2px] border-border p-[10px] flex flex-col justify-center` 
-         : `relative float-left ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} w-[60px] bg-background-dark border-r-[2px] border-border p-[10px] flex flex-col justify-center items-center`
-        }
+         ? `w-[300px]` 
+         : `w-[60px] items-center`}
       `}
     >
       {styleType === "style1" ? (
 
         <> {/* Style 1 */}
 
-          <div className="flex flex-row w-full text-white">
+          <div className="flex flex-row w-full">
             <img src={banner_d} alt="Nexarion Logo" className="h-[38px]" />
             <div className="flex-grow"/>
-            <button onClick={toggleStyle}>
-              <PanelLeft size={32}/>
-            </button>
+            <PanelLeft onClick={toggleStyle} size={38} className="p-2 rounded-lg group-hover:block hover:bg-hover-l dark:hover:bg-hover-d"/>
           </div>
 
           <div className="flex-grow"/>
 
-          <div className="flex flex-col gap-4 w-full text-white text-sm">
+          <div className="flex flex-col gap-4 w-full text-sm">
 
-            <button className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            <button className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
               <Search size={32}/>
               Search
             </button>
 
-            <Link to='/' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            <Link to='/' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
               <LayoutDashboard size={32}/>
               Dashboard
             </Link>
 
-            <Link to='/statistics' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            <Link to='/statistics' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
               <ChartNoAxesCombined size={32}/>
               Statistics
             </Link>
 
-            <Link to='/Budget' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            <Link to='/Budget' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
               <Wallet size={32}/>
               Budget
             </Link>
 
-            <Link to='/accounts' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            <Link to='/accounts' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
               <Landmark size={32}/>
               Accounts
             </Link>
@@ -105,8 +106,8 @@ export function Navbar() {
 
           <div className="flex-grow"/>
 
-          <div className="flex flex-col gap-4 text-white text-sm w-full space-between">
-            <button className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg" onClick={toggleDropdown} ref={toggleButtonRef}>
+          <div className="flex flex-col gap-4 text-sm w-full space-between">
+            <button onClick={toggleDropdown} ref={toggleButtonRef} className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
               <User size={32}/>
               User
             </button>
@@ -118,46 +119,46 @@ export function Navbar() {
 
           <div className="flex group">
 
-            <button onClick={toggleStyle} className="flex w-[38px] h-[38px] justify-center items-center">
-              <img src={logo} alt="Normal Logo" className="w-[32px] h-[32px] block group-hover:hidden" />
-              <PanelLeft size={38} className="text-white p-2 bg-[#292929] rounded-lg hidden group-hover:block"/>
+            <button onClick={toggleStyle} className="flex justify-center items-center w-[38px] h-[38px] ">
+              <img src={logo} alt="Normal Logo" className="block w-[32px] h-[32px] group-hover:hidden" />
+              <PanelLeft size={38} className="hidden p-2 rounded-lg group-hover:block hover:bg-hover-l dark:hover:bg-hover-d"/>
             </button>
 
           </div>
 
           <div className="flex-grow"/>
 
-          <div className="flex justify-between flex-col gap-4 w-[38px]">
+          <div className="flex flex-col justify-between gap-4 w-[38px]">
 
             <button>
-              <Search size={38} className="text-white p-[6px] hover:bg-[#292929] rounded-lg"/>
+              <Search size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
             </button>
 
             <Link to='/'>
-              <LayoutDashboard size={38} className="text-white p-[6px] rounded-lg hover:bg-[#292929]"/>
+              <LayoutDashboard size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
             </Link>
 
             <Link to='/statistics'>
-              <ChartNoAxesCombined size={38} className="text-white p-[6px] rounded-lg hover:bg-[#292929]"/>
+              <ChartNoAxesCombined size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
             </Link>
 
             <Link to='/budget'>
-              <Wallet size={38} className="text-white p-[6px] rounded-lg hover:bg-[#292929]"/>
+              <Wallet size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
             </Link>
 
             <Link to='/accounts'>
-              <Landmark size={38} className="text-white p-[6px] rounded-lg hover:bg-[#292929]"/>
+              <Landmark size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
             </Link>
 
           </div>
 
           <div className="flex-grow"/>
 
-          <div className="w-[38px] h-[38px] group flex justify-center items-center">
+          <div className="flex justify-center items-center group w-[38px] h-[38px]  ">
 
             <button ref={toggleButtonRef}>
-              <User size={38} className="text-white group-hover:hidden p-1"/>
-              <EllipsisVertical size={38} className="text-white hidden group-hover:block bg-[#292929] p-1 rounded-lg p-2" onClick={toggleDropdown} />
+              <User size={38} className="p-1 group-hover:hidden"/>
+              <EllipsisVertical onClick={toggleDropdown} size={38} className="hidden p-2 rounded-lg group-hover:block hover:bg-hover-l dark:hover:bg-hover-d"/>
             </button>
             
           </div>
@@ -165,36 +166,26 @@ export function Navbar() {
       )}
 
     {openDropdown && (
-      <div className={`absolute bottom-[10px] bg-background w-48 text-white border-[2px] border-border rounded-lg shadow-lg
+      <div className={`absolute w-48 bottom-[10px] rounded-lg shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] bg-white dark:bg-gray-9 border-[2px] border-white dark:border-gray-7 text-black dark:text-white
         ${styleType === "style1"
         ? "left-[290px]"
         : "left-[50px]"
         }`}
         ref={dropdownRef}>
         <nav className="flex flex-col">
-          <Link to='/user' onClick={() => setOpenDropdown(false)} className="flex items-center gap-3 hover:bg-[#292929] p-2">
-            <User size={24} className="text-white"/>
+          <Link to='/user' onClick={() => setOpenDropdown(false)} className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d">
+            <User size={24}/>
             User
           </Link>
 
-          <Link to='/settings' onClick={() => setOpenDropdown(false)} className="flex items-center gap-3 hover:bg-[#292929] p-2">
-            <Settings size={24} className="text-white"/>
+          <Link to='/settings' onClick={() => setOpenDropdown(false)} className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d">
+            <Settings size={24}/>
             Settings
           </Link>
-
-          <button
-            /*
-              onClick={toggleTheme}
-            */
-            className="flex items-center gap-3 hover:bg-[#292929] p-2 text-white"
-            >
-            <Sun size={24}/>
-            Light Mode
-          </button>
-
+          <ToggleTheme/>
           <button
             onClick={logout}
-            className="flex items-center gap-3 hover:bg-[#292929] p-2 text-red-400"
+            className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d text-red-400"
             >
             <LogOut size={24}/>
             Logout
