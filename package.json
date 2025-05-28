@@ -3,7 +3,7 @@
     "build-react": "cd react-ui && npm run build",
     "start-react": "cd react-ui && npm run dev",
     "start-electron": "cd electron && npm start",
-    
+
     "update": "npm run build-react && concurrently \"npm run start-react\" \"npm run start-electron\"",
     "install-app": "npm install && cd electron && npm install && cd ../react-ui && npm install"
   }
