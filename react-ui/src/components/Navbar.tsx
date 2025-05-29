@@ -1,10 +1,16 @@
 export function Navbar() {
   return <div id="navbar">
-
-    <div id="navbar_top">
-      
-    </div>
-    
+    <nav id="navbar_body">
+      <div id="navbar_top">
+        <p>test</p>
+      </div>
+      <div id="navbar_middle">
+        <p>test1</p>
+      </div>
+      <div id="navbar_bottom">
+        <p>test2</p>
+      </div>
+    </nav>
   </div>
 }
 
