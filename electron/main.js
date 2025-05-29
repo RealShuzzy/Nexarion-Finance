@@ -11,6 +11,8 @@ function createWindow() {
             preload: path.join(__dirname, 'preload.js')
         },
         autoHideMenuBar: true,
+        titleBarStyle: 'hidden',
+        frame: false,
 
         minWidth:960,
         minHeight:540,

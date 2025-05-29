@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Electron only */
+#titlebar{
+  width: 100%;
+  height: 30px;
+  background-color: rgb(24,24,24);
+  color: white;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+  border-bottom: solid rgb(41,41,41) 1px;
+}
+
+#windowAction{
+  position: absolute;
+  right: 5px;
+}
+
+.electron-no-scrollbars {
+  overflow: hidden; /* hides all scrollbars and disables scroll */
+  width: 100vw;
+  height: 100vh;
+}
+
+.electron-no-scrollbars * {
+  /* ensure child elements don’t overflow */
+  box-sizing: border-box;
+}
+
+/* React + Electron */
+
 #navbar{
   float: left;
   height: 100vh;
