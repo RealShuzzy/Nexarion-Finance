@@ -1,4 +1,4 @@
-import { Minimize, Maximize2, X } from 'lucide-react';
+import { Minus, Square, X } from 'lucide-react';
 
 const CustomTitleBar: React.FC = () => {
   const handleWindowAction = (action: 'minimize' | 'maximize' | 'close') => {
@@ -15,13 +15,13 @@ const CustomTitleBar: React.FC = () => {
 
       <div className="flex gap-2" id="windowAction" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties & { WebkitAppRegion: string }}>
 
-        <button onClick={() => handleWindowAction('minimize')} className="hover:bg-gray-700 p-1 rounded">
-          <Minimize size={16} />
+        <button onClick={() => handleWindowAction('minimize')} className="hover:bg-[#292929] p-1 rounded">
+          <Minus size={16} />
         </button>
-        <button onClick={() => handleWindowAction('maximize')} className="hover:bg-gray-700 p-1 rounded">
-          <Maximize2 size={16} />
+        <button onClick={() => handleWindowAction('maximize')} className="hover:bg-[#292929] p-1 rounded">
+          <Square size={16} />
         </button>
-        <button onClick={() => handleWindowAction('close')} className="hover:bg-red-600 p-1 rounded">
+        <button onClick={() => handleWindowAction('close')} className="hover:bg-red-500 p-1 rounded">
           <X size={16} />
         </button>
       </div>
