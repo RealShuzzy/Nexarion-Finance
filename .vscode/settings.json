@@ -1,0 +1,18 @@
+{
+    "git.autofetch": true,
+
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+
+    //Hide files:
+
+    "files.exclude": {
+    "**/node_modules/": true,
+    ".vscode/": true,
+    "**/.gitignore": true,
+    "package-lock.json": true,
+    "**/react-ui/README.md": true,
+
+    }
+}
