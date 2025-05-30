@@ -6,7 +6,7 @@ import CustomTitleBar from '../components/Titlebar'
 export const Layout: React.FC = () => {
   const isElectron = typeof window !== 'undefined' && !!window.electronAPI;
   return <div id="layout" className={isElectron ? 'electron-no-scrollbars' : ''}>
-    {/*isElectron && */<CustomTitleBar />}
+    {isElectron && <CustomTitleBar />}
     <Navbar/>
     <Main/>
   </div>
