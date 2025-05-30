@@ -118,5 +118,6 @@
 
 #layout{
   background-color: rgb(255, 141, 141);
-  display: flex;
+  /*display: flex;*/
+  
 }
