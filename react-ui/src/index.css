@@ -33,34 +33,90 @@
 
 /* React + Electron */
 
-#navbar{
+/* Navbar */
+
+.navbar-style1 {
   float: left;
   height: 100vh;
-  width: 300px;
+  min-width: 300px;
   background-color: rgb(24,24,24);
   border-right: solid 2px rgb(41,41,41);
   padding: 10px;
 }
 
-#navbar_body{
+.navbar-style2 {
+  float: left;
+  height: 100vh;
+  width: 60px;
+  background-color: rgb(24,24,24);
+  border-right: solid 2px rgb(41,41,41);
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+#navbar_top_style1{
   display: flex;
+  justify-content: space-between;
+}
+
+#navbar_top_style2{
+  display: flex;
+  justify-content: center;
+}
+
+#navbar_top_banner{
+  width: 200px;
+}
+
+#navbar_top_collapse{
+  width: 30px;
+}
+
+#toggle_collapse_button {
+  position: relative;
+  width: 30px;  /* fix this to your image width */
+  height: 30px; /* fix this to your image height */
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  overflow: visible; /* just to be sure */
+}
+
+#toggle_collapse_button img {
   width: 100%;
-  flex-direction: column;
-  gap: 20px;
+  height: 100%;
+  display: block;
 }
 
-#navbar_serchbar{
-  width: 500px;
+#toggle_collapse_button .navbar_top_collapse_hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1; /* on top */
 }
 
+#toggle_collapse_button:hover .navbar_top_collapse_normal {
+  display: none;
+}
+
+#toggle_collapse_button:hover .navbar_top_collapse_hover {
+  display: block;
+}
+
+/* Main */
 
 #main{
   background-color: rgb(31,31,31);
   height: 100vh;
-  width: calc(100vw - 300px);
-  margin-left: 300px;
+  width: 100%;
+  padding: 10px;
 }
 
 #layout{
-  background-color: blueviolet;
+  background-color: rgb(255, 141, 141);
+  display: flex;
 }

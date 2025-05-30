@@ -1,52 +1,55 @@
-export function Navbar() {
-  return <div id="navbar">
-    <nav id="navbar_body">
-      <div id="navbar_top">
-        <p>test</p>
-      </div>
-      <div id="navbar_middle">
-        <p>test1</p>
-      </div>
-      <div id="navbar_bottom">
-        <p>test2</p>
-      </div>
-    </nav>
-  </div>
-}
+import { useState } from "react";
+import banner from '../assets/Nexarion_Banner.svg'
+import logo from '../assets/Nexarion_Logo.svg'
+import collapse from '../assets/navbar_collapse.svg'
 
-/*
 export function Navbar() {
-  return <div id="navbar">
-    <div className="navbar bg-base-100 shadow-sm" id="navbar_base">
-  <div className="flex-1">
-    <a className="btn btn-ghost text-xl">daisyUI</a>
-  </div>
-  <div className="flex gap-2" id="navbar_serchbar">
-    <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-    <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img
-            alt="Tailwind CSS Navbar component"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-        </div>
-      </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-    
-  </div>
+
+  const [styleType, setStyleType] = useState("style1");
+  const toggleStyle = () => {
+    if (styleType === "style1") {
+      setStyleType("style2");
+    } else {
+      setStyleType("style1");
+    }
+  };
+
+  return (
+    <nav
+      id="navbar"
+      className={styleType === "style1" ? "navbar-style1" : "navbar-style2"}
+    >
+      {styleType === "style1" ? (
+        <>
+          <div id="navbar_top_style1">
+            <img src={banner} alt="Nexarion Logo" id="navbar_top_banner" />
+            <button onClick={toggleStyle}>
+              <img src={collapse} alt="Collapse Sidebar" id="navbar_top_collapse" />
+            </button>
+          </div>
+          <div id="navbar_middle_style1">
+            
+          </div>
+          <div id="navbar_bottom_style1">
+            
+          </div>
+        </>
+      ) : (
+        <>
+          <div id="navbar_top_style2">
+            <button onClick={toggleStyle} id="toggle_collapse_button">
+              <img src={logo} alt="Normal Logo" className="navbar_top_collapse_normal" />
+              <img src={collapse} alt="Hover Logo" className="navbar_top_collapse_hover" />
+            </button>
+          </div>
+          <div id="navbar_middle_style2">
+            
+          </div>
+          <div id="navbar_bottom_style2">
+            
+          </div>
+        </>
+      )}
+    </nav>
+  );
 }
-*/
