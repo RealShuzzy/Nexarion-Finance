@@ -21,15 +21,33 @@ export function Navbar() {
     >
       {styleType === "style1" ? (
         <>
+
           <div id="navbar_top_style1">
             <img src={banner} alt="Nexarion Logo" id="navbar_top_banner" />
             <button onClick={toggleStyle}>
               <img src={collapse} alt="Collapse Sidebar" id="navbar_top_collapse" />
             </button>
           </div>
+
           <div id="navbar_middle_style1">
-            
+            <label className="input input-primary" >
+              <button className="btn btn-primary">Test</button>
+              <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+                <g
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeWidth="3.5"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </g>
+              </svg>
+              <input type="search" className="grow" placeholder="Search" />
+            </label>
           </div>
+
           <div id="navbar_bottom_style1">
             
           </div>
