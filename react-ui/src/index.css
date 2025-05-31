@@ -5,7 +5,7 @@
 /* Electron only */
 #titlebar{
   width: 100%;
-  height: 30px;
+  min-height: 30px;
   background-color: rgb(24,24,24);
   color: white;
   display: flex;
@@ -118,6 +118,12 @@
 
 #layout{
   background-color: rgb(255, 141, 141);
-  /*display: flex;*/
+  display: flex;
+  flex-direction: column;
   
+}
+
+#wrapper{
+  display: flex;
+  flex-direction: row;
 }
