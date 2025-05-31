@@ -2,54 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@plugin "daisyui";
-@plugin "daisyui/theme" {
-  name: "nexarion-dark";
-  default: true;
-  prefersdark: true;
-  color-scheme: "dark";
-  --color-base-100: rgb(24,24,24);
-  --color-base-200: rgb(31,31,31);
-  --color-base-300: rgb(41,41,41);
-  --color-base-content: oklch(100% 0 0);
-  --color-primary: rgb(25,130,220);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: rgb(25,190,220);
-  --color-secondary-content: oklch(100% 0 0);
-  --color-accent: oklch(58% 0.233 277.117);
-  --color-accent-content: oklch(100% 0 0);
-  --color-neutral: rgb(50,50,50);
-  --color-neutral-content: oklch(98% 0.003 247.858);
-  --color-info: oklch(70% 0.165 254.624);
-  --color-info-content: oklch(100% 0 0);
-  --color-success: oklch(79% 0.209 151.711);
-  --color-success-content: oklch(100% 0 0);
-  --color-warning: oklch(85% 0.199 91.936);
-  --color-warning-content: oklch(100% 0 0);
-  --color-error: oklch(70% 0.191 22.216);
-  --color-error-content: oklch(100% 0 0);
-  --radius-selector: 0.5rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 2px;
-  --depth: 0;
-  --noise: 0;
+:root {
+  --color-primary: 25 130 220; /* RGB without commas for Tailwind */
+  --color-secondary: 25 190 220;
+
+  --color-background-dark: 24 24 24;
+  --color-background: 31 31 31;
+
+  --color-border: 41 41 41;
 }
 
 /* Electron only */
-#titlebar{
-  width: 100%;
-  min-height: 30px;
-  background-color: rgb(24,24,24);
-  color: white;
-  display: flex;
-  align-items:center;
-  justify-content: center;
-  position: relative;
-  border-bottom: solid rgb(41,41,41) 1px;
-}
 
 #windowAction{
   position: absolute;
@@ -145,15 +108,6 @@
 
 #navbar_middle_style1{
   padding-top: 50px;
-}
-
-/* Main */
-
-#main{
-  background-color: rgb(31,31,31);
-  height: 100vh;
-  width: 100%;
-  padding: 10px;
 }
 
 #layout{

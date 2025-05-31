@@ -5,12 +5,17 @@ module.exports = {
         "index.html"
     ],
     theme:{
-        extend: {},
-    },
-    plugins: [
-        require('daisyui'),
-    ],
-    daisyui: {
-        themes: [],
+        extend: {
+            colors: {
+                'primary': 'rgb(var(--color-primary) / <alpha-value>)',
+                'secondary': 'rgb(var(--color-secondary) / <alpha-value>)',
+
+                'background-dark': 'rgb(var(--color-background-dark) / <alpha-value>)',
+                'background': 'rgb(var(--color-background) / <alpha-value>)',
+
+                'border': 'rgb(var(--color-border) / <alpha-value>)',
+            },
         },
+    },
+    plugins: [],
       };
