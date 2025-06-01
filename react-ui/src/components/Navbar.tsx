@@ -1,7 +1,10 @@
 import { useState } from "react";
-import banner from '../assets/Nexarion_Banner.svg'
+//import banner from '../assets/Nexarion_Banner.svg'
 import logo from '../assets/Nexarion_Logo.svg'
 import collapse from '../assets/navbar_collapse.svg'
+
+import banner_l from '../assets/Banner.svg'
+import banner_d from '../assets/Banner_Dark.svg'
 
 export function Navbar() {
 
@@ -23,14 +26,15 @@ export function Navbar() {
         <>
 
           <div id="navbar_top_style1">
-            <img src={banner} alt="Nexarion Logo" id="navbar_top_banner" />
+            <img src={banner_d} alt="Nexarion Logo" id="navbar_top_banner" />
             <button onClick={toggleStyle}>
               <img src={collapse} alt="Collapse Sidebar" id="navbar_top_collapse" />
             </button>
           </div>
 
           <div id="navbar_middle_style1">
-
+            <img src={banner_l} alt="Nexarion Logo" id="navbar_top_banner" />
+            <img src={banner_d} alt="Nexarion Logo" id="navbar_top_banner" />
           </div>
 
           <div id="navbar_bottom_style1">

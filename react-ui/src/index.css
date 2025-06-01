@@ -65,7 +65,8 @@
 }
 
 #navbar_top_banner{
-  height: 38px;
+  /*height: 38px;*/
+  width: 200px;
 }
 
 #navbar_top_collapse{
