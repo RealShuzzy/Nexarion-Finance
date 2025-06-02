@@ -5,9 +5,9 @@ import CustomTitleBar from '../components/Titlebar'
 
 export const Layout: React.FC = () => {
   const isElectron = typeof window !== 'undefined' && !!window.electronAPI;
-  return <div id="layout" className={isElectron ? 'electron-no-scrollbars' : ''}>
+  return <div className={`flex flex-col ${isElectron ? 'overflow-hidden w-screen h-screen' : ''}`} style={isElectron ? { boxSizing: 'border-box' } : undefined}>
     {isElectron && <CustomTitleBar />}
-    <div id="wrapper">
+    <div className='flex flex-row'>
       <Navbar/>
       <Main/>
     </div>

@@ -8,12 +8,12 @@ const CustomTitleBar: React.FC = () => {
 
   return (
     <div
-      className='w-full min-h-[30px] bg-background-dark text-white flex items-center justify-center relative border-b-[2px] border-border'
+      className='w-full min-h-[30px] bg-background-dark text-white flex items-center justify-center relative border-b-[1px] border-border'
       style={{ WebkitAppRegion: 'drag' } as React.CSSProperties & { WebkitAppRegion: string }}
     >
       <div className="text-sm font-semibold">Nexarion</div>
 
-      <div className="flex gap-2" id="windowAction" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties & { WebkitAppRegion: string }}>
+      <div className="flex gap-2 absolute right-[5px]" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties & { WebkitAppRegion: string }}>
 
         <button onClick={() => handleWindowAction('minimize')} className="hover:bg-[#292929] p-1 rounded">
           <Minus size={16} />
