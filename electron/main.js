@@ -21,6 +21,7 @@ function createWindow() {
   });
 
   mainWindow.loadFile(path.join(__dirname, '../react-ui/dist/index.html'));
+  mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);

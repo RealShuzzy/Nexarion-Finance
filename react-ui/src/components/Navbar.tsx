@@ -33,7 +33,7 @@ export function Navbar() {
       {styleType === "style1" ? (
         <>
 
-          <div className={`flex absolute ${isElectron ? 'top-10' : 'top-4'} justify-between gap-10`} >
+          <div className={`flex absolute ${isElectron ? 'top-10' : 'top-4'} justify-between gap-10 min-w-[275px]`} >
             <img src={banner_d} alt="Nexarion Logo" className="h-[38px]" />
             <button onClick={toggleStyle}>
               <img src={collapse} alt="Collapse Sidebar" className="w-[38px]" />
