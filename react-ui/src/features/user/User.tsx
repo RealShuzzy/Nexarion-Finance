@@ -1,5 +1,5 @@
 import React from 'react';
-import { logout } from "./logout";
+import { logout } from "../auth/logout";
 
 const User: React.FC = () => {
   return <div id="budget" className="bg-background text-white w-full p-[10px]">

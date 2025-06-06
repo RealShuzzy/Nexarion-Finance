@@ -1,14 +1,16 @@
 import { useState } from "react";
-import logo from '../assets/Logo.svg'
-import collapse from '../assets/navbar_collapse.svg'
-import banner_d from '../assets/Banner_Dark.svg'
-import search from '../assets/search.svg'
-import dashboard from '../assets/dashboard.svg'
-import statistic from '../assets/statistic.svg'
-import budget from '../assets/budget.svg'
-import bank from '../assets/bank.svg'
-import account from '../assets/account.svg'
 import { Link } from "react-router-dom";
+
+import logo from '@assets/Logo.svg'
+import collapse from '@assets/navbar_collapse.svg'
+import banner_d from '@assets/Banner_Dark.svg'
+import search from '@assets/search.svg'
+import dashboard from '@assets/dashboard.svg'
+import statistic from '@assets/statistic.svg'
+import budget from '@assets/budget.svg'
+import bank from '@assets/bank.svg'
+import account from '@assets/account.svg'
+
 
 const isElectron = typeof window !== 'undefined' && !!window.electronAPI;
 

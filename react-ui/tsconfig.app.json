@@ -7,7 +7,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "incremental": true,
-    "types": ["vite/client", "./src/types/electron"],
+    "types": ["vite/client", "node" , "./src/types/electron"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -22,6 +22,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    /* Alias support */
+    "baseUrl": "src",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@routes/*": ["routes/*"],
+      "@types/*": ["types/*"]
+    }
   },
   "include": ["src"]
 }

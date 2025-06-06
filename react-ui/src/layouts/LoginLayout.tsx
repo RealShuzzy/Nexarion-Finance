@@ -1,6 +1,6 @@
 import React from 'react'
-import CustomTitleBar from '../components/Titlebar'
-import Login from '../components/Login';
+import CustomTitleBar from '../components/layout/Titlebar'
+import Login from '../features/auth/Login';
 
 export const LoginLayout: React.FC = () => {
   const isElectron = typeof window !== 'undefined' && !!window.electronAPI;

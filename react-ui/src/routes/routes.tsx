@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from '../layouts/AppLayout';
-import Dashboard from '../components/Dashboard';
-import Budget from '../components/Budget';
-import Statistics from '../components/Statistics';
-import Portfolios_and_Accounts from '../components/Portfolios_and_Accounts';
-import User from '../components/User';
+import Dashboard from '../features/dashboard/Dashboard';
+import Budget from '../features/budget/Budget';
+import Statistics from '../features/statistics/Statistics';
+import Portfolios_and_Accounts from '../features/accounts/Portfolios_and_Accounts';
+import User from '../features/user/User';
 import { LoginLayout } from '../layouts/LoginLayout';
-import AuthGuard from '../components/AuthGuard';
+import AuthGuard from '../features/auth/AuthGuard';
 
 export default function App() {
   return (

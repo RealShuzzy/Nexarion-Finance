@@ -1,6 +1,6 @@
 import React from 'react'
-import { Navbar } from '../components/Navbar'
-import CustomTitleBar from '../components/Titlebar'
+import { Navbar } from '../components/layout/Navbar'
+import CustomTitleBar from '../components/layout/Titlebar'
 import { Outlet } from 'react-router-dom';
 
 export const Layout: React.FC = () => {
