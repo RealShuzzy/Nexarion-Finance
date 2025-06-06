@@ -8,6 +8,7 @@ import statistic from '../assets/statistic.svg'
 import budget from '../assets/budget.svg'
 import bank from '../assets/bank.svg'
 import account from '../assets/account.svg'
+import { Link } from "react-router-dom";
 
 const isElectron = typeof window !== 'undefined' && !!window.electronAPI;
 
@@ -50,31 +51,31 @@ export function Navbar() {
               <img src={search} alt="Search" className="w-[32px]"/>
               Search
             </button>
-            <button className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            <Link to='/' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
               <img src={dashboard} alt="Dashboard" className="w-[32px]"/>
               Dashboard
-            </button>
-            <button className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            </Link>
+            <Link to='/statistics' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
               <img src={statistic} alt="Statistics" className="w-[32px]"/>
               Statistics
-            </button>
-            <button className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            </Link>
+            <Link to='/Budget' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
               <img src={budget} alt="Budget" className="w-[32px]"/>
               Budget
-            </button>
-            <button className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            </Link>
+            <Link to='/accounts' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
               <img src={bank} alt="Accounts" className="w-[32px]"/>
-              Portfolios & Konten
-            </button>
+              Portfolios & Accounts
+            </Link>
           </div>
 
           <div className="flex-grow"/>
 
           <div className="flex flex-col gap-4 text-white text-sm w-full">
-            <button className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
+            <Link to='/user' className="flex items-center gap-3 hover:bg-[#292929] p-2 rounded-lg">
               <img src={account} alt="Accounts" className="w-[32px]"/>
               User
-            </button>
+            </Link>
           </div>
         </>
       ) : (
@@ -91,26 +92,26 @@ export function Navbar() {
             <button>
               <img src={search} alt="Search" className="hover:bg-[#292929] p-1 rounded-lg"/>
             </button>
-            <button>
+            <Link to='/'>
               <img src={dashboard} alt="Dashboard" className="hover:bg-[#292929] p-1 rounded-lg"/>
-            </button>
-            <button>
+            </Link>
+            <Link to='/statistics'>
               <img src={statistic} alt="Statistics" className="hover:bg-[#292929] p-1 rounded-lg"/>
-            </button>
-            <button>
+            </Link>
+            <Link to='/budget'>
               <img src={budget} alt="Budget" className="hover:bg-[#292929] p-1 rounded-lg"/>
-            </button>
-            <button>
+            </Link>
+            <Link to='/accounts'>
               <img src={bank} alt="Accounts" className="hover:bg-[#292929] p-1 rounded-lg"/>
-            </button>
+            </Link>
           </div>
 
           <div className="flex-grow"/>
 
           <div className="w-[38px] h-[38px]">
-            <button>
+            <Link to='/user'>
               <img src={account} alt="Accounts" className="hover:bg-[#292929] p-1 rounded-lg"/>
-            </button>
+            </Link>
           </div>
         </>
       )}

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Budget: React.FC = () => {
+const Dashboard: React.FC = () => {
   return <div id="budget" className="bg-background text-white w-full p-[10px]">
-      <p>This is the Budget</p>
+      <p>This is the Dashboard</p>
       
     </div>
 };
 
-export default Budget;
+export default Dashboard;

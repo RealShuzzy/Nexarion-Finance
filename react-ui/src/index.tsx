@@ -1,18 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { Layout } from './layouts/AppLayout.tsx'
-import { HashRouter, Routes, Route } from 'react-router-dom'
-import { Budget } from './components/Budget.tsx'
+import App from './routes/routes.tsx'
+import { HashRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/Budget" element={<Budget/>}/>
-        </Route>
-      </Routes>
+      <App	/>
     </HashRouter>
-  </StrictMode>,
+  </StrictMode>
 )
