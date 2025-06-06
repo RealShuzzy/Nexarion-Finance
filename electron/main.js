@@ -1,9 +1,8 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
-let mainWindow;
-
-function createWindow() {
+// Main window
+function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
@@ -21,28 +20,77 @@ function createWindow() {
   });
 
   mainWindow.loadFile(path.join(__dirname, '../react-ui/dist/index.html'));
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 }
 
-app.whenReady().then(createWindow);
+// Login window
+function createLoginWindow() {
+  loginWindow = new BrowserWindow({
+    width: 400,
+    height: 300,
+    resizable: false,
+    fullscreenable: false,
+    title: 'Nexarion Login',
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
+    autoHideMenuBar: true,
+    titleBarStyle: 'hidden',
+    frame: false,
+  });
 
+  loginWindow.loadFile(
+    path.join(__dirname, '../react-ui/dist/index.html'), { hash: '/login' } );
 
+  loginWindow.once('ready-to-show', () => {
+    loginWindow.show();
+  });
+
+  
+  loginWindow.on('closed', () => {
+    loginWindow = null;
+  });
+  
+}
+
+app.whenReady().then(createLoginWindow);
+
+// Login
+ipcMain.on('login-success', () => {
+  if (loginWindow) {
+    loginWindow.close();
+    loginWindow = null;
+  }
+  createMainWindow();
+});
+
+// Logout
+ipcMain.on('logout', () => {
+  if (mainWindow) {
+    mainWindow.close();
+    mainWindow = null;
+  }
+  createLoginWindow();
+});
+
+// Titlebar window-controls
 ipcMain.on('window-action', (event, action) => {
-  if (!mainWindow) return;
+  const senderWindow = BrowserWindow.fromWebContents(event.sender);
+  if (!senderWindow ) return;
 
   switch (action) {
     case 'minimize':
-      mainWindow.minimize();
+      senderWindow.minimize();
       break;
     case 'maximize':
-      if (mainWindow.isMaximized()) {
-        mainWindow.unmaximize();
+      if (senderWindow.isMaximized()) {
+        senderWindow.unmaximize();
       } else {
-        mainWindow.maximize();
+        senderWindow.maximize();
       }
       break;
     case 'close':
-      mainWindow.close();
+      senderWindow.close();
       break;
   }
 });

@@ -5,16 +5,23 @@ import Budget from '../components/Budget';
 import Statistics from '../components/Statistics';
 import Portfolios_and_Accounts from '../components/Portfolios_and_Accounts';
 import User from '../components/User';
+import { LoginLayout } from '../layouts/LoginLayout';
+import AuthGuard from '../components/AuthGuard';
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="statistics" element={<Statistics />} />
-        <Route path="budget" element={<Budget />} />
-        <Route path="accounts" element={<Portfolios_and_Accounts />} />
-        <Route path="user" element={<User />} />
+      <Route path="/login" element={<LoginLayout/>} />
+
+      {/*Protected routes*/}
+      <Route element={<AuthGuard/>}>
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Dashboard />} />
+          <Route path="statistics" element={<Statistics />} />
+          <Route path="budget" element={<Budget />} />
+          <Route path="accounts" element={<Portfolios_and_Accounts />} />
+          <Route path="user" element={<User />} />
+        </Route>
       </Route>
     </Routes>
   );
