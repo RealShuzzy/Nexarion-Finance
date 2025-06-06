@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import banner from '@assets/Banner_Dark.svg'
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
 
   const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -54,7 +54,7 @@ const Login: React.FC = () => {
         </div>
 
           <div className='flex justify-center text-blue-400 pt-2'>
-            <p>Register a new account</p>
+            <p>Already have an account?t</p>
           </div>
 
       </div>
@@ -63,4 +63,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;

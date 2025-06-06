@@ -26,13 +26,15 @@ function createMainWindow() {
 // Login window
 function createLoginWindow() {
   loginWindow = new BrowserWindow({
-    width: 400,
-    height: 300,
+    width: 700,
+    height: 600,
     resizable: false,
+    maximizable: false,
     fullscreenable: false,
     title: 'Nexarion Login',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      additionalArguments: ['--window-name=login'],
     },
     autoHideMenuBar: true,
     titleBarStyle: 'hidden',

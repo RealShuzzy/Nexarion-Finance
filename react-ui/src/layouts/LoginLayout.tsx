@@ -10,7 +10,7 @@ export const LoginLayout: React.FC = () => {
       style={isElectron ? { boxSizing: 'border-box' } : undefined}
     >
       {isElectron && <CustomTitleBar />}
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center bg-background-dark h-screen">
         <Login/>
       </div>
     </div>

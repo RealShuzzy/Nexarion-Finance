@@ -12,6 +12,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginLayout/>} />
+      <Route path="/register" element={<LoginLayout/>} /> {/*Stopped here, integrade register */}
 
       <Route element={<AuthGuard/>}>
         <Route path="/" element={<Layout />} >

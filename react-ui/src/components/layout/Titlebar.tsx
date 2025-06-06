@@ -5,6 +5,10 @@ const CustomTitleBar: React.FC = () => {
     window.electronAPI?.windowAction(action);
   };
 
+  const windowName = window.electronAPI?.getWindowName();
+
+  const isLogin = windowName === 'login';
+
   return (
     <div
       className='w-full min-h-[30px] bg-background-dark text-white flex items-center justify-center relative border-b-[1px] border-border'
@@ -15,10 +19,10 @@ const CustomTitleBar: React.FC = () => {
       <div className="flex gap-2 absolute right-[5px]" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties & { WebkitAppRegion: string }}>
 
         <button onClick={() => handleWindowAction('minimize')} className="hover:bg-[#292929] p-1 rounded">
-          <Minus size={16} />
+          {!isLogin && <Minus size={16} />}
         </button>
         <button onClick={() => handleWindowAction('maximize')} className="hover:bg-[#292929] p-1 rounded">
-          <Square size={16} />
+          {!isLogin && <Square size={16} />}
         </button>
         <button onClick={() => handleWindowAction('close')} className="hover:bg-red-500 p-1 rounded">
           <X size={16} />

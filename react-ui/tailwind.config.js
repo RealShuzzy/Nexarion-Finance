@@ -13,7 +13,11 @@ module.exports = {
                 'background-dark': 'rgb(var(--color-background-dark) / <alpha-value>)',
                 'background': 'rgb(var(--color-background) / <alpha-value>)',
 
+                'field-dark': 'rgb(var(--color-field-dark) / <alpha-value>)',
+
                 'border': 'rgb(var(--color-border) / <alpha-value>)',
+
+                'text-gray': 'rgb(var(--color-text-gray) / <alpha-value>)',
             },
         },
     },
