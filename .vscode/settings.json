@@ -11,8 +11,9 @@
     "**/node_modules/": true,
     ".vscode/": true,
     "**/.gitignore": true,
-    "package-lock.json": true,
+    "**/package-lock.json": true,
     "**/react-ui/README.md": true,
-
+    "**/react-ui/eslint.config.js": true,
+    "**/react-ui/postcss.config.cjs": true,
     }
 }

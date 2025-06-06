@@ -13,7 +13,6 @@ export default function App() {
     <Routes>
       <Route path="/login" element={<LoginLayout/>} />
 
-      {/*Protected routes*/}
       <Route element={<AuthGuard/>}>
         <Route path="/" element={<Layout />} >
           <Route index element={<Dashboard />} />

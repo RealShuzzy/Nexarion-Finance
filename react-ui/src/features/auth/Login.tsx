@@ -10,7 +10,6 @@ const Login: React.FC = () => {
         localStorage.setItem('auth', 'true');
         navigate('/');
 
-        // Notify Electron main process
         window.electronAPI?.loginSuccess();
     } else {
         alert('Wrong password!');

@@ -2,7 +2,6 @@ import { Minus, Square, X } from 'lucide-react';
 
 const CustomTitleBar: React.FC = () => {
   const handleWindowAction = (action: 'minimize' | 'maximize' | 'close') => {
-    // @ts-ignore - electronAPI injected by preload
     window.electronAPI?.windowAction(action);
   };
 
