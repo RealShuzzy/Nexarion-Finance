@@ -18,13 +18,19 @@ const CustomTitleBar: React.FC = () => {
 
       <div className="flex gap-2 absolute right-[5px]" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties & { WebkitAppRegion: string }}>
 
-        <button onClick={() => handleWindowAction('minimize')} className="hover:bg-[#292929] p-1 rounded">
-          {!isLogin && <Minus size={16} />}
+        {!isLogin &&
+        <button onClick={() => handleWindowAction('minimize')} className="hover:bg-[#292929] p-1 rounded" tabIndex={-1}>
+          <Minus size={16} />
         </button>
-        <button onClick={() => handleWindowAction('maximize')} className="hover:bg-[#292929] p-1 rounded">
-          {!isLogin && <Square size={16} />}
+        }
+
+        {!isLogin &&
+        <button onClick={() => handleWindowAction('maximize')} className="hover:bg-[#292929] p-1 rounded" tabIndex={-1}>
+          <Square size={16} />
         </button>
-        <button onClick={() => handleWindowAction('close')} className="hover:bg-red-500 p-1 rounded">
+        }
+        
+        <button onClick={() => handleWindowAction('close')} className="hover:bg-red-500 p-1 rounded" tabIndex={-1}>
           <X size={16} />
         </button>
       </div>

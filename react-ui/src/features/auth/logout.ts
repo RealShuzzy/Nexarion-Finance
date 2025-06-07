@@ -1,6 +1,5 @@
 export function logout() {
-  localStorage.removeItem('auth');
-
+  localStorage.removeItem('token');
   if (window.electronAPI) {
     window.electronAPI.logout();
   } else {

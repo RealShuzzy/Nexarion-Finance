@@ -6,13 +6,14 @@ import Statistics from '../features/statistics/Statistics';
 import Portfolios_and_Accounts from '../features/accounts/Portfolios_and_Accounts';
 import User from '../features/user/User';
 import { LoginLayout } from '../layouts/LoginLayout';
+import { RegisterLayout } from '../layouts/RegisterLayout.tsx';
 import AuthGuard from '../features/auth/AuthGuard';
 
 export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginLayout/>} />
-      <Route path="/register" element={<LoginLayout/>} /> {/*Stopped here, integrade register */}
+      <Route path="/register" element={<RegisterLayout/>} />
 
       <Route element={<AuthGuard/>}>
         <Route path="/" element={<Layout />} >
