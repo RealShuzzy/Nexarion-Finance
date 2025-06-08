@@ -4,7 +4,6 @@ import banner from '@assets/Banner_Dark.svg';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
-  //const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -145,7 +144,7 @@ const Login: React.FC = () => {
 
             </div>
             
-            <button type="submit" className="h-10 rounded-lg bg-primary text-white font-semibold mt-2">Login</button>
+            <button type="submit" className="h-10 rounded-lg bg-primary text-white font-semibold mt-2">Register</button>
 
           </form>
         </div>
