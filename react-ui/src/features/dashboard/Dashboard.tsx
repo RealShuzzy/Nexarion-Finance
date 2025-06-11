@@ -1,14 +1,16 @@
 import { Plus, Share2 } from 'lucide-react';
 import React from 'react';
+import PieChart from './PieChart';
 
 const Dashboard: React.FC = () => {
 
   const username = localStorage.getItem('username')
+  const isElectron = typeof window !== 'undefined' && !!window.electronAPI;
 
   return (
-  <div className="flex flex-col space-between h-full w-full p-[10px] gap-5 dark:bg-gray-9 dark:text-white">
+  <div className="flex flex-col justify-between h-full w-full p-[20px] gap-5 dark:bg-gray-9 dark:text-white scrollbar-hidden overflow-y-auto">
 
-    <div className='flex items-center w-full bg-blue-400'>
+    <div className='flex items-center h-[50px] w-full '>
 
       <div className='flex flex-col'>
         <span className='font-bold text-gray-4 text-sm'>Guten Morgen, {username}</span>
@@ -30,35 +32,31 @@ const Dashboard: React.FC = () => {
         </button>
 
         <div className='flex flex-row gap-3'>
-          <button className='flex flex-row items-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             1W
           </button>
 
-          <button className='flex flex-row items-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             1M
           </button>
 
-          <button className='flex flex-row items-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             6M
           </button>
           
-          <button className='flex flex-row items-center h-[38px] w-[48px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row items-center justify-center h-[38px] w-[48px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             YTD
           </button>
 
-          <button className='flex flex-row items-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             1Y
           </button>
 
-          <button className='flex flex-row items-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
-            3Y
-          </button>
-
-          <button className='flex flex-row items-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             5Y
           </button>
 
-          <button className='flex flex-row items-center h-[38px] w-[48px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row items-center justify-center h-[38px] w-[56px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             MAX
           </button>
 
@@ -68,10 +66,10 @@ const Dashboard: React.FC = () => {
 
     </div>
 
-    <div className='flex flex-row space-between h-[89vh] gap-5'>
+    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-row space-between gap-5`}>
 
       <div className='w-[40%] bg-red-400'>
-        <p>ml</p>
+        <PieChart data={[1,1]}/>
       </div>
 
       <div className='w-[60%] bg-green-400'>
@@ -89,7 +87,7 @@ const Dashboard: React.FC = () => {
       <div className='h-[180px] bg-purple-400'>
         <p>cash</p>
       </div>
-      
+
     </div>
       
   </div>

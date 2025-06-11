@@ -33,7 +33,7 @@ export const Layout: React.FC = () => {
           className={`
             transition-all duration-500 ease-in-out
             ${styleType === 'style1' ? 'ml-[300px]' : 'ml-[60px]'}
-            flex-grow dark:bg-gray-9 p-[10px] overflow-auto
+            flex-grow dark:bg-gray-9 overflow-hidden
           `}
         >
           <Outlet />
