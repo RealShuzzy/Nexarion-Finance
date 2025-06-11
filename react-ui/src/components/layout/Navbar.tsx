@@ -11,25 +11,22 @@ import banner_d from '@assets/Banner_Dark.svg'
 import { logout } from "@features/auth/logout";
 import ToggleTheme from "@components/common/ToggleTheme";
 
-
 const isElectron = typeof window !== 'undefined' && !!window.electronAPI; // Check if the window is an app or browser
 
-export function Navbar() {
+type NavbarProps = {
+  styleType: string;
+  toggleStyle: () => void;
+};
 
-  // Style
-  const [styleType, setStyleType] = useState("style1");
-  const toggleStyle = () => {
-    if (styleType === "style1") {
-      setStyleType("style2");
-    } else {
-      setStyleType("style1");
-    }
-  };
+export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
 
   // Dropdown
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Variables
+  const username = localStorage.getItem('username')
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -55,7 +52,7 @@ export function Navbar() {
     <nav
       className={`
         transition-[width] duration-500 ease-in-out
-        relative float-left flex flex-col justify-center
+        fixed float-left flex flex-col justify-center
         ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} p-[10px]
         bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px]
         ${styleType === "style1"
@@ -109,7 +106,7 @@ export function Navbar() {
           <div className="flex flex-col gap-4 text-sm w-full space-between">
             <button onClick={toggleDropdown} ref={toggleButtonRef} className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
               <User size={32}/>
-              User
+              {username}
             </button>
           </div>
         </>
@@ -175,7 +172,7 @@ export function Navbar() {
         <nav className="flex flex-col">
           <Link to='/user' onClick={() => setOpenDropdown(false)} className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d">
             <User size={24}/>
-            User
+            Profile
           </Link>
 
           <Link to='/settings' onClick={() => setOpenDropdown(false)} className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d">

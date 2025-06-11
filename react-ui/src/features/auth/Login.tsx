@@ -46,6 +46,7 @@ const Login: React.FC = () => {
 
       const data = await response.json();
       localStorage.setItem('token', data.access_token);
+      localStorage.setItem('username', data.username);
       navigate('/');
 
       window.electronAPI?.loginSuccess();
@@ -65,9 +66,9 @@ const Login: React.FC = () => {
         <img src={banner} alt="Nexarion Logo" className="w-[250px]" />
       </div>
 
-      <div className="flex-wrap" />
+      <div className="flex-grow" />
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-5">
         <div className="flex text-center pb-1 font-semibold text-xl">Log in to your account</div>
         <div className="flex text-center text-sm text-gray-4">Welcome back! Please enter your details</div>
       </div>
@@ -103,7 +104,7 @@ const Login: React.FC = () => {
               />
             </div>
 
-            <div className='flex-wrap'>
+            <div>
               {errorMessage && (
               <div className="text-red-400 text-sm text-center fixed left-1/2 -translate-x-1/2 translate-y-[-5px]">
                 {errorMessage}

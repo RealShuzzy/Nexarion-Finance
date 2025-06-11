@@ -91,9 +91,9 @@ const Login: React.FC = () => {
         <img src={banner} alt="Nexarion Logo" className="w-[250px]" />
       </div>
 
-      <div className="flex-wrap" />
+      <div className="flex-grow" />
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-5">
         <div className="flex text-center font-semibold text-xl pb-1">Create a new account</div>
         <div className="flex text-center text-sm text-gray-4">Welcome on Board! Please enter your details</div>
       </div>
@@ -129,8 +129,7 @@ const Login: React.FC = () => {
               />
             </div>
 
-            <div className='flex-wrap'>
-
+            <div>
               {errorMessage && (
                 <div className="text-red-400 text-sm text-center fixed left-1/2 -translate-x-1/2 translate-y-[-5px]">
                   {errorMessage}
@@ -142,9 +141,6 @@ const Login: React.FC = () => {
                   {successMessage}
                 </div>
               )}
-
-
-
             </div>
             
             <button type="submit" className="h-10 rounded-lg bg-primary text-white font-semibold mt-2">Register</button>
