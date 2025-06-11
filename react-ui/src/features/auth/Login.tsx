@@ -69,7 +69,7 @@ const Login: React.FC = () => {
 
       <div className="flex flex-col items-center">
         <div className="flex text-center pb-1 font-semibold text-xl">Log in to your account</div>
-        <div className="flex text-center text-sm text-gray-7 dark:text-gray-6">Welcome back! Please enter your details</div>
+        <div className="flex text-center text-sm text-gray-4">Welcome back! Please enter your details</div>
       </div>
 
       <div className="flex flex-col">
@@ -81,6 +81,7 @@ const Login: React.FC = () => {
                 ref={usernameRef}
                 type="text"
                 id="username"
+                placeholder="Username"
                 className="h-10 p-3 rounded-lg dark:bg-field-dark border-[2px] border-gray-5 dark:border-gray-7"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -94,6 +95,7 @@ const Login: React.FC = () => {
                 ref={passwordRef}
                 type="password"
                 id="password"
+                placeholder="Password"
                 className="h-10 p-3 rounded-lg dark:bg-field-dark border-[2px] border-gray-5 dark:border-gray-7"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

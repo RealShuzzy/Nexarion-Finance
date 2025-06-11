@@ -86,7 +86,7 @@ const Login: React.FC = () => {
 
 
   return (
-    <div className="flex flex-col justify-between items-center h-[570px] w-[700px] p-[20px] bg-background-dark">
+    <div className="flex flex-col justify-between items-center h-[570px] w-[700px] p-[20px] dark:bg-gray-10 dark:text-white">
       <div className="flex">
         <img src={banner} alt="Nexarion Logo" className="w-[250px]" />
       </div>
@@ -94,20 +94,21 @@ const Login: React.FC = () => {
       <div className="flex-wrap" />
 
       <div className="flex flex-col items-center">
-        <div className="flex text-center font-semibold text-xl text-white pb-1">Create a new account</div>
-        <div className="flex text-center text-sm text-text-gray">Welcome on Board! Please enter your details</div>
+        <div className="flex text-center font-semibold text-xl pb-1">Create a new account</div>
+        <div className="flex text-center text-sm text-gray-4">Welcome on Board! Please enter your details</div>
       </div>
 
       <div className="flex flex-col">
-        <div className="w-[450px] h-[300px] p-[30px] bg-background rounded-lg shadow-[0_0_12px_rgba(0,0,0,0.4)]">
-          <form className="flex flex-col h-full justify-between text-white" onSubmit={handleRegister}>
+        <div className="w-[450px] h-[300px] p-[30px] rounded-lg shadow-[0_0_12px_rgba(0,0,0,0.4)] dark:bg-gray-9">
+          <form className="flex flex-col justify-between h-full" onSubmit={handleRegister}>
             <div className="flex flex-col space-y-1">
               <label htmlFor="username" className="text-white font-semibold">Username:</label>
               <input
                 ref={usernameRef}
                 type="text"
                 id="username"
-                className="h-10 rounded-lg bg-field-dark border-border border p-3"
+                placeholder="Username"
+                className="h-10 p-3 rounded-lg dark:bg-field-dark border-[2px] border-gray-5 dark:border-gray-7"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -120,7 +121,8 @@ const Login: React.FC = () => {
                 ref={passwordRef}
                 type="password"
                 id="password"
-                className="h-10 rounded-lg bg-field-dark border-border border p-3"
+                placeholder="Password"
+                className="h-10 p-3 rounded-lg dark:bg-field-dark border-[2px] border-gray-5 dark:border-gray-7"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
