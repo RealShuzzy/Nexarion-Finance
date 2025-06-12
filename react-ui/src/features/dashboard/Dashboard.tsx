@@ -61,9 +61,10 @@ const Dashboard: React.FC = () => {
 
     </div>
 
-    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-row space-between gap-5`}>
+    {/**THIS IS NOT WORKING!!!!! */}
+    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-wrap w-full [container-type:inline-size]:w-[1200px]`}>
 
-      <div className='flex flex-col items-center w-[40%] bg-red-400'>
+    <div className="flex flex-col items-center w-full box-border bg-red-400 [container-inline-size:1200px]:w-[40%]">
         <PieChart data={[
           { value: 300, group: 'crypto',     name: 'Bitcoin' },
           { value: 100, group: 'cash',       name: 'Cash' },         
@@ -74,11 +75,19 @@ const Dashboard: React.FC = () => {
         ]}/>
       </div>
 
-      <div className='w-[60%] bg-green-400'>
-        <p>mr</p>
+      <div className="flex flex-col items-center w-full box-border bg-green-400 [container-inline-size:1200px]:w-[60%]">
+        <PieChart data={[
+          { value: 300, group: 'crypto',     name: 'Bitcoin' },
+          { value: 100, group: 'cash',       name: 'Cash' },         
+          { value: 200, group: 'realEstate', name: 'White House' },
+          { value: 200, group: 'cash',        name: 'S&P500' },
+          { value: 300, group: 'cash',      name: 'NVIDIA' },
+          { value: 100, group: 'other',      name: 'Side Hussle' }
+        ]}/>
       </div>
 
     </div>
+    {/**UNTIL HERE */}
 
     <div className='flex flex-col w-full gap-5'>
 

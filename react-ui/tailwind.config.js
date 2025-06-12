@@ -31,6 +31,17 @@ module.exports = {
                 'text-gray': 'rgb(var(--color-text-gray) / <alpha-value>)',
             },
         },
+        container: {
+            type: 'inline-size',
+            center: true,
+        },
+        screens: {
+            'container-sm': { 'raw': '(min-width: 0px)' },
+            'container-md': { 'raw': '(min-width: 800px)' },
+            'container-lg': { 'raw': '(min-width: 1200px)' },
+        },
     },
-    plugins: [],
-      };
+    future: {
+        enableContainerQueries: true,
+    },
+};
