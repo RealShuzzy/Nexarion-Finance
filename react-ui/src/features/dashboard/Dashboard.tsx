@@ -1,4 +1,4 @@
-import { Plus, Share2 } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import React from 'react';
 import PieChart from './PieChart';
 
@@ -20,11 +20,6 @@ const Dashboard: React.FC = () => {
       <div className='flex-grow'/>
 
       <div className='flex space-between gap-8'>
-        
-        <button className='flex flex-row items-center p-2 gap-3 rounded-lg text-xl hover:bg-hover-l dark:hover:bg-hover-d'>
-          <Share2 size={24}/>
-          Share
-        </button>
 
         <button className='flex flex-row items-center p-2 gap-3 rounded-lg text-xl bg-hover-l dark:bg-gray-7 hover:bg-hover-l dark:hover:bg-hover-d'>
           <Plus size={24}/>
@@ -68,8 +63,15 @@ const Dashboard: React.FC = () => {
 
     <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-row space-between gap-5`}>
 
-      <div className='w-[40%] bg-red-400'>
-        <PieChart data={[1,1]}/>
+      <div className='flex flex-col items-center w-[40%] bg-red-400'>
+        <PieChart data={[
+          { value: 300, group: 'crypto',     name: 'Bitcoin' },
+          { value: 100, group: 'cash',       name: 'Cash' },         
+          { value: 200, group: 'realEstate', name: 'White House' },
+          { value: 200, group: 'cash',        name: 'S&P500' },
+          { value: 300, group: 'cash',      name: 'NVIDIA' },
+          { value: 100, group: 'other',      name: 'Side Hussle' }
+        ]}/>
       </div>
 
       <div className='w-[60%] bg-green-400'>
