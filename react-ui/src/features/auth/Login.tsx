@@ -61,7 +61,7 @@ const Login: React.FC = () => {
 
 
   return (
-    <div className="flex flex-col justify-between items-center h-[570px] w-[700px] p-[20px] dark:bg-gray-10 dark:text-white">
+    <div className="flex flex-col justify-between items-center dark:bg-gray-10 p-[20px] w-[700px] h-[570px] dark:text-white">
       <div className="flex">
         <img src={banner} alt="Nexarion Logo" className="w-[250px]" />
       </div>
@@ -69,12 +69,12 @@ const Login: React.FC = () => {
       <div className="flex-grow" />
 
       <div className="flex flex-col items-center mb-5">
-        <div className="flex text-center pb-1 font-semibold text-xl">Log in to your account</div>
-        <div className="flex text-center text-sm text-gray-4">Welcome back! Please enter your details</div>
+        <div className="flex pb-1 font-semibold text-xl text-center">Log in to your account</div>
+        <div className="flex text-gray-4 text-sm text-center">Welcome back! Please enter your details</div>
       </div>
 
       <div className="flex flex-col">
-        <div className="w-[450px] h-[300px] p-[30px] rounded-lg shadow-[0_0_12px_rgba(0,0,0,0.4)] dark:bg-gray-9">
+        <div className="dark:bg-gray-9 shadow-[0_0_12px_rgba(0,0,0,0.4)] p-[30px] rounded-lg w-[450px] h-[300px]">
           <form className="flex flex-col justify-between h-full" onSubmit={handleLogin}>
             <div className="flex flex-col space-y-1">
               <label htmlFor="username" className="font-semibold">Username:</label>
@@ -83,7 +83,7 @@ const Login: React.FC = () => {
                 type="text"
                 id="username"
                 placeholder="Username"
-                className="h-10 p-3 rounded-lg dark:bg-field-dark border-[2px] border-gray-5 dark:border-gray-7"
+                className="dark:bg-field-dark p-3 border-[2px] border-gray-5 dark:border-gray-7 rounded-lg h-10"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -91,13 +91,13 @@ const Login: React.FC = () => {
             </div>
 
             <div className="flex flex-col space-y-1">
-              <label htmlFor="password" className="text-white font-semibold">Password:</label>
+              <label htmlFor="password" className="font-semibold text-white">Password:</label>
               <input
                 ref={passwordRef}
                 type="password"
                 id="password"
                 placeholder="Password"
-                className="h-10 p-3 rounded-lg dark:bg-field-dark border-[2px] border-gray-5 dark:border-gray-7"
+                className="dark:bg-field-dark p-3 border-[2px] border-gray-5 dark:border-gray-7 rounded-lg h-10"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -106,18 +106,18 @@ const Login: React.FC = () => {
 
             <div>
               {errorMessage && (
-              <div className="text-red-400 text-sm text-center fixed left-1/2 -translate-x-1/2 translate-y-[-5px]">
+              <div className="left-1/2 fixed text-red-400 text-sm text-center -translate-x-1/2 translate-y-[-5px]">
                 {errorMessage}
               </div>
               )}
             </div>
             
-            <button type="submit" className="h-10 rounded-lg bg-primary text-white font-semibold mt-2">Login</button>
+            <button type="submit" className="bg-primary mt-2 rounded-lg h-10 font-semibold text-white">Login</button>
 
           </form>
         </div>
 
-        <div className="flex justify-center text-blue-400 pt-2">
+        <div className="flex justify-center pt-2 text-blue-400">
           <Link to='/register'>
             <p>Register a new account</p>
           </Link>

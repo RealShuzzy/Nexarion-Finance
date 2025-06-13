@@ -67,34 +67,34 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
           <div className="flex flex-row w-full">
             <img src={banner_d} alt="Nexarion Logo" className="h-[38px]" />
             <div className="flex-grow"/>
-            <PanelLeft onClick={toggleStyle} size={38} className="p-2 rounded-lg group-hover:block hover:bg-hover-l dark:hover:bg-hover-d"/>
+            <PanelLeft onClick={toggleStyle} size={38} className="group-hover:block hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg"/>
           </div>
 
           <div className="flex-grow"/>
 
           <div className="flex flex-col gap-4 w-full text-sm">
 
-            <button className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
+            <button className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <Search size={32}/>
               Search
             </button>
 
-            <Link to='/' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
+            <Link to='/' className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <LayoutDashboard size={32}/>
               Dashboard
             </Link>
 
-            <Link to='/statistics' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
+            <Link to='/statistics' className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <ChartNoAxesCombined size={32}/>
               Statistics
             </Link>
 
-            <Link to='/Budget' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
+            <Link to='/Budget' className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <Wallet size={32}/>
               Budget
             </Link>
 
-            <Link to='/accounts' className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
+            <Link to='/accounts' className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <Landmark size={32}/>
               Accounts
             </Link>
@@ -103,8 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
 
           <div className="flex-grow"/>
 
-          <div className="flex flex-col gap-4 text-sm w-full space-between">
-            <button onClick={toggleDropdown} ref={toggleButtonRef} className="flex items-center gap-3 p-2 rounded-lg hover:bg-hover-l dark:hover:bg-hover-d">
+          <div className="flex flex-col gap-4 w-full text-sm space-between">
+            <button onClick={toggleDropdown} ref={toggleButtonRef} className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <User size={32}/>
               {username}
             </button>
@@ -114,11 +114,11 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
 
         <> {/* Style 2 */}
 
-          <div className="flex group">
+          <div className="group flex">
 
-            <button onClick={toggleStyle} className="flex justify-center items-center w-[38px] h-[38px] ">
-              <img src={logo} alt="Normal Logo" className="block w-[32px] h-[32px] group-hover:hidden" />
-              <PanelLeft size={38} className="hidden p-2 rounded-lg group-hover:block hover:bg-hover-l dark:hover:bg-hover-d"/>
+            <button onClick={toggleStyle} className="flex justify-center items-center w-[38px] h-[38px]">
+              <img src={logo} alt="Normal Logo" className="group-hover:hidden block w-[32px] h-[32px]" />
+              <PanelLeft size={38} className="hidden group-hover:block hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg"/>
             </button>
 
           </div>
@@ -128,34 +128,34 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
           <div className="flex flex-col justify-between gap-4 w-[38px]">
 
             <button>
-              <Search size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
+              <Search size={38} className="hover:bg-hover-l dark:hover:bg-hover-d p-[6px] rounded-lg"/>
             </button>
 
             <Link to='/'>
-              <LayoutDashboard size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
+              <LayoutDashboard size={38} className="hover:bg-hover-l dark:hover:bg-hover-d p-[6px] rounded-lg"/>
             </Link>
 
             <Link to='/statistics'>
-              <ChartNoAxesCombined size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
+              <ChartNoAxesCombined size={38} className="hover:bg-hover-l dark:hover:bg-hover-d p-[6px] rounded-lg"/>
             </Link>
 
             <Link to='/budget'>
-              <Wallet size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
+              <Wallet size={38} className="hover:bg-hover-l dark:hover:bg-hover-d p-[6px] rounded-lg"/>
             </Link>
 
             <Link to='/accounts'>
-              <Landmark size={38} className="p-[6px] rounded-lg hover:bg-hover-l dark:hover:bg-hover-d"/>
+              <Landmark size={38} className="hover:bg-hover-l dark:hover:bg-hover-d p-[6px] rounded-lg"/>
             </Link>
 
           </div>
 
           <div className="flex-grow"/>
 
-          <div className="flex justify-center items-center group w-[38px] h-[38px]  ">
+          <div className="group flex justify-center items-center w-[38px] h-[38px]">
 
             <button ref={toggleButtonRef}>
-              <User size={38} className="p-1 group-hover:hidden"/>
-              <EllipsisVertical onClick={toggleDropdown} size={38} className="hidden p-2 rounded-lg group-hover:block hover:bg-hover-l dark:hover:bg-hover-d"/>
+              <User size={38} className="group-hover:hidden p-1"/>
+              <EllipsisVertical onClick={toggleDropdown} size={38} className="hidden group-hover:block hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg"/>
             </button>
             
           </div>
@@ -170,19 +170,19 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
         }`}
         ref={dropdownRef}>
         <nav className="flex flex-col">
-          <Link to='/user' onClick={() => setOpenDropdown(false)} className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d">
+          <Link to='/user' onClick={() => setOpenDropdown(false)} className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2">
             <User size={24}/>
             Profile
           </Link>
 
-          <Link to='/settings' onClick={() => setOpenDropdown(false)} className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d">
+          <Link to='/settings' onClick={() => setOpenDropdown(false)} className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2">
             <Settings size={24}/>
             Settings
           </Link>
           <ToggleTheme/>
           <button
             onClick={logout}
-            className="flex items-center p-2 gap-3 hover:bg-hover-l dark:hover:bg-hover-d text-red-400"
+            className="flex items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 text-red-400"
             >
             <LogOut size={24}/>
             Logout

@@ -12,26 +12,26 @@ const CustomTitleBar: React.FC = () => {
 
   return (
     <div
-      className='relative flex justify-center items-center min-h-[30px] w-full dark:bg-gray-10 text-black dark:text-white border-b-[1px] border-black dark:border-gray-7'
+      className='relative flex justify-center items-center dark:bg-gray-10 dark:border-gray-7 border-b-[1px] border-black w-full min-h-[30px] text-black dark:text-white'
       style={{ WebkitAppRegion: 'drag' } as React.CSSProperties & { WebkitAppRegion: string }}
     >
-      <div className="text-sm font-semibold">Nexarion</div>
+      <div className="font-semibold text-sm">Nexarion</div>
 
-      <div className="absolute flex gap-2 right-[5px]" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties & { WebkitAppRegion: string }}>
+      <div className="right-[5px] absolute flex gap-2" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties & { WebkitAppRegion: string }}>
 
         {!isLogin &&
-        <button onClick={() => handleWindowAction('minimize')} className="p-1 rounded hover:bg-hover-l dark:hover:bg-hover-d" tabIndex={-1}>
+        <button onClick={() => handleWindowAction('minimize')} className="hover:bg-hover-l dark:hover:bg-hover-d p-1 rounded" tabIndex={-1}>
           <Minus size={16} />
         </button>
         }
 
         {!isLogin &&
-        <button onClick={() => handleWindowAction('maximize')} className="p-1 rounded hover:bg-hover-l dark:hover:bg-hover-d" tabIndex={-1}>
+        <button onClick={() => handleWindowAction('maximize')} className="hover:bg-hover-l dark:hover:bg-hover-d p-1 rounded" tabIndex={-1}>
           <Square size={16} />
         </button>
         }
         
-        <button onClick={() => handleWindowAction('close')} className="p-1 rounded hover:bg-red-400" tabIndex={-1}>
+        <button onClick={() => handleWindowAction('close')} className="hover:bg-red-400 p-1 rounded" tabIndex={-1}>
           <X size={16} />
         </button>
       </div>

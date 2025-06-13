@@ -137,13 +137,13 @@ const PieChart: React.FC<PieChartProps> = ({
                     transform={`translate(${(dx * hoverOffset) / ((outerRadius + innerRadius) / 2)} ${(dy * hoverOffset) / ((outerRadius + innerRadius) / 2)})`}
                     onMouseEnter={() => setHoveredIndex(i)}
                     onMouseLeave={() => setHoveredIndex(null)}
-                    className="cursor-pointer transition-transform duration-300"
+                    className="transition-transform duration-300 cursor-pointer"
                     />
                 );
                 })}
             </g>
             </svg>
-        <div className="absolute flex flex-col items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="top-1/2 left-1/2 absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2">
             <p className="font-extrabold text-4xl">{hoveredIndex === null ? total + '€' : value[hoveredIndex] + '€'}</p>
             <p className="font-semibold text-sm">{hoveredIndex === null ? 'Net Worth' : name[hoveredIndex]}</p>
         </div>

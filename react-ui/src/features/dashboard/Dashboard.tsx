@@ -11,57 +11,57 @@ const Dashboard: React.FC = () => {
 
   return (
   // Dashboard
-  <div className="flex flex-col justify-between h-full w-full p-[20px] gap-5 dark:bg-gray-9 dark:text-white scrollbar-hidden overflow-y-scroll">
+  <div className="scrollbar-hidden flex flex-col justify-between gap-5 dark:bg-gray-9 p-[20px] w-full h-full overflow-y-scroll dark:text-white">
 
     {/* Top */}
-    <div className='flex items-center h-[50px] w-full'>
+    <div className='flex items-center w-full h-[50px]'>
 
       {/* Dashboard Text */}
       <div className='flex flex-col'>
         <span className='font-bold text-gray-4 text-sm'>Welcome, {username}!</span>
-        <span className='font-bold text-2xl dark:text-white'>Dashboard</span>
+        <span className='font-bold dark:text-white text-2xl'>Dashboard</span>
       </div>
 
       {/* Spacer */}
       <div className='flex-grow min-w-6'/>
 
       {/* Buttons */}
-      <div className='flex space-between gap-8 h-[38px]'>
+      <div className='flex gap-8 h-[38px] space-between'>
 
         {/* Buttons time */}
         <div className='flex flex-row gap-3'>
-          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row justify-center items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg w-[38px] h-[38px] font-semibold text-m'>
             1W
           </button>
 
-          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row justify-center items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg w-[38px] h-[38px] font-semibold text-m'>
             1M
           </button>
 
-          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row justify-center items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg w-[38px] h-[38px] font-semibold text-m'>
             6M
           </button>
           
-          <button className='flex flex-row items-center justify-center h-[38px] w-[48px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row justify-center items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg w-[48px] h-[38px] font-semibold text-m'>
             YTD
           </button>
 
-          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row justify-center items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg w-[38px] h-[38px] font-semibold text-m'>
             1Y
           </button>
 
-          <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row justify-center items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg w-[38px] h-[38px] font-semibold text-m'>
             5Y
           </button>
 
-          <button className='flex flex-row items-center justify-center h-[38px] w-[56px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
+          <button className='flex flex-row justify-center items-center gap-3 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg w-[56px] h-[38px] font-semibold text-m'>
             MAX
           </button>
 
         </div>
 
         {/* Button add */}
-        <button className='flex flex-row items-center p-2 gap-3 rounded-lg text-xl bg-hover-l dark:bg-gray-7 hover:bg-hover-l dark:hover:bg-hover-d  w-[38px]'>
+        <button className='flex flex-row items-center gap-3 bg-hover-l hover:bg-hover-l dark:bg-gray-7 dark:hover:bg-hover-d p-2 rounded-lg w-[38px] text-xl'>
             <Plus size={24}/>
         </button>
 
@@ -99,12 +99,12 @@ const Dashboard: React.FC = () => {
     </div>
     
     {/* Holdings */}
-    <div className='min-h-[300px] bg-gray-8 rounded-lg'>
+    <div className='bg-gray-8 rounded-lg min-h-[300px]'>
       <p>holdings</p>
     </div>
     
     {/* Cash */}
-    <div className='flex flex-col min-h-[300px] bg-gray-8 justify-end rounded-lg'>
+    <div className='flex flex-col justify-end bg-gray-8 rounded-lg min-h-[300px]'>
       <p>cash</p>
       <p>cash</p>
       <p>cash</p>
@@ -112,7 +112,7 @@ const Dashboard: React.FC = () => {
     </div>
 
     {/* Padding for electron */}
-    {isElectron && <div className='min-h-[10px] w-full' />}
+    {isElectron && <div className='w-full min-h-[10px]' />}
       
   </div>
 )};
