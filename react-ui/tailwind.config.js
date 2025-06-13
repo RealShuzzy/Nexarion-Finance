@@ -31,13 +31,5 @@ module.exports = {
                 'text-gray': 'rgb(var(--color-text-gray) / <alpha-value>)',
             },
         },
-        container: {
-            screens: {
-                sm: '800pxpx',
-                md: '1200px',
-                lg: '1400px',
-            }
-        },
     },
-    plugins: [require('@tailwindcss/container-queries')],
 };
