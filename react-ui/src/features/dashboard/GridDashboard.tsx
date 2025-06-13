@@ -4,7 +4,7 @@ import React from 'react';
 import PieChart from './PieChart';
 import DataNumbers from './DataNumbers';
 
-const Dashboard: React.FC = () => {
+const Dashboard2: React.FC = () => {
 
   // Variables
   const username = localStorage.getItem('username')
@@ -14,9 +14,10 @@ const Dashboard: React.FC = () => {
   // Dashboard
   <div className="scrollbar-hidden flex flex-col justify-between gap-5 dark:bg-gray-9 p-[20px] w-full h-full overflow-y-scroll dark:text-white">
 
+
+  {/** 
     {/* Top */}
-    <div className='flex items-center w-full h-[50px]
-                    s:bg-red-400 m:bg-yellow-400 l:bg-green-400 xl:bg-blue-400'>
+    <div className='flex items-center w-full h-[50px]'>
 
       {/* Dashboard Text */}
       <div className='flex flex-col'>
@@ -70,41 +71,14 @@ const Dashboard: React.FC = () => {
       </div>
 
     </div>
+    
+    {/* Middle */}
+    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-wrap w-full gap-5`}>
 
-
-
-
-
-
-    <div className="grid gap-5  
-              s:grid-cols-1 s:grid-rows-3 
-              m:grid-cols-1 m:grid-rows-3
-              l:grid-cols-2 l:grid-rows-2
-              xl:grid-cols-2 xl:grid-rows-2
-              max-w-full">
-
-    <div className="bg-red-400 order-1">
-      <PieChart data={[
-              { value: 500, group: 'crypto',     name: 'Bitcoin' },
-              { value: 100, group: 'cash',       name: 'Cash' },
-              { value: 200, group: 'realEstate', name: 'White House' },
-              { value: 200, group: 'cash',       name: 'S&P500' },
-              { value: 300, group: 'cash',       name: 'NVIDIA' },
-              { value: 100, group: 'other',      name: 'Side Hussle' }
-            ]}/>
-    </div>
-
-    <div className="bg-yellow-400 s:order-2 m:order-2 l:order-3 xl:order-3">
-      <DataNumbers />
-    </div>
-
-    <div className={`bg-green-400 
-                    s:row-span-1 m:row-span-1 l:row-span-2 xl:row-span-2
-                    s:order-3 m:order-3
-                    l:order-2
-                    xl:order-2
-                    `}>
-      <PieChart data={[
+      {/* Pie Chart & Data Numbers */}
+      <div className={`flex flex-col w-[clamp(350px,35%,100%)] bg-gray-8 rounded-lg flex-grow`}>
+        <div className='justify-center h-[60%] w-full flex max-w-full p-4 bg-yellow-400 rounded-t-lg'>
+          <PieChart data={[
             { value: 500, group: 'crypto',     name: 'Bitcoin' },
             { value: 100, group: 'cash',       name: 'Cash' },
             { value: 200, group: 'realEstate', name: 'White House' },
@@ -112,21 +86,46 @@ const Dashboard: React.FC = () => {
             { value: 300, group: 'cash',       name: 'NVIDIA' },
             { value: 100, group: 'other',      name: 'Side Hussle' }
           ]}/>
-    </div>
-  </div>
+        </div>
 
-  <div className="flex flex-col gap-5">
-    <div className="bg-yellow-200">
+        <div className='h-[40%] w-full'>
+          <DataNumbers />
+        </div>
+      </div>
+
+      {/* Chart */}
+      <div className={`flex flex-col items-center w-[clamp(350px,60%,100%)] bg-gray-8 rounded-lg flex-grow`}>
+        <PieChart data={[
+          { value: 500, group: 'crypto',     name: 'Bitcoin' },
+          { value: 100, group: 'cash',       name: 'Cash' },
+          { value: 200, group: 'realEstate', name: 'White House' },
+          { value: 200, group: 'cash',       name: 'S&P500' },
+          { value: 300, group: 'cash',       name: 'NVIDIA' },
+          { value: 100, group: 'other',      name: 'Side Hussle' }
+        ]}/>
+      </div>
+
+    </div>
+    
+    {/* Holdings */}
+    <div className='bg-gray-8 rounded-lg min-h-[300px]'>
       <p>holdings</p>
     </div>
-    <div className="bg-purple-200">
+    
+    {/* Cash */}
+    <div className='flex flex-col justify-end bg-gray-8 rounded-lg min-h-[300px]'>
+      <p>cash</p>
+      <p>cash</p>
+      <p>cash</p>
       <p>cash</p>
     </div>
-  </div>
 
-  {/* Padding for electron */}
-  {isElectron && <div className='w-full min-h-[10px]' />}
-</div>
+  
+
+    {/* Padding for electron */}
+    {isElectron && <div className='w-full min-h-[10px]' />}
+      
+  </div>
 )};
 
-export default Dashboard;
+export default Dashboard2;

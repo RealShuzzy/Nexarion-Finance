@@ -30,6 +30,12 @@ module.exports = {
 
                 'text-gray': 'rgb(var(--color-text-gray) / <alpha-value>)',
             },
+            screens: {
+                's': '0px',
+                'm': '600px',
+                'l': '900px',
+                'xl': '1500px',
+            },
         },
     },
 };
