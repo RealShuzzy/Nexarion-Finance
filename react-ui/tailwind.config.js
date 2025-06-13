@@ -32,16 +32,12 @@ module.exports = {
             },
         },
         container: {
-            type: 'inline-size',
-            center: true,
-        },
-        screens: {
-            'container-sm': { 'raw': '(min-width: 0px)' },
-            'container-md': { 'raw': '(min-width: 800px)' },
-            'container-lg': { 'raw': '(min-width: 1200px)' },
+            screens: {
+                sm: '800pxpx',
+                md: '1200px',
+                lg: '1400px',
+            }
         },
     },
-    future: {
-        enableContainerQueries: true,
-    },
+    plugins: [require('@tailwindcss/container-queries')],
 };

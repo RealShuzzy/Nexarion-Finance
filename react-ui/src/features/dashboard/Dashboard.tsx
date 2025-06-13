@@ -1,31 +1,34 @@
+// Imports
 import { Plus } from 'lucide-react';
 import React from 'react';
 import PieChart from './PieChart';
 
 const Dashboard: React.FC = () => {
 
+  // Variables
   const username = localStorage.getItem('username')
   const isElectron = typeof window !== 'undefined' && !!window.electronAPI;
 
   return (
-  <div className="flex flex-col justify-between h-full w-full p-[20px] gap-5 dark:bg-gray-9 dark:text-white scrollbar-hidden overflow-y-auto">
+  // Dashboard
+  <div className="flex flex-col justify-between h-full w-full p-[20px] gap-5 dark:bg-gray-9 dark:text-white scrollbar-hidden overflow-y-scroll">
 
-    <div className='flex items-center h-[50px] w-full '>
+    {/* Top */}
+    <div className='flex items-center h-[50px] w-full'>
 
+      {/* Dashboard Text */}
       <div className='flex flex-col'>
-        <span className='font-bold text-gray-4 text-sm'>Guten Morgen, {username}</span>
+        <span className='font-bold text-gray-4 text-sm'>Welcome, {username}!</span>
         <span className='font-bold text-2xl dark:text-white'>Dashboard</span>
       </div>
 
-      <div className='flex-grow'/>
+      {/* Spacer */}
+      <div className='flex-grow min-w-6'/>
 
-      <div className='flex space-between gap-8'>
+      {/* Buttons */}
+      <div className='flex space-between gap-8 h-[38px]'>
 
-        <button className='flex flex-row items-center p-2 gap-3 rounded-lg text-xl bg-hover-l dark:bg-gray-7 hover:bg-hover-l dark:hover:bg-hover-d'>
-          <Plus size={24}/>
-          Add a Portfolio
-        </button>
-
+        {/* Buttons time */}
         <div className='flex flex-row gap-3'>
           <button className='flex flex-row items-center justify-center h-[38px] w-[38px] p-2 gap-3 rounded-lg text-m font-semibold hover:bg-hover-l dark:hover:bg-hover-d'>
             1W
@@ -57,49 +60,59 @@ const Dashboard: React.FC = () => {
 
         </div>
 
+        {/* Button add */}
+        <button className='flex flex-row items-center p-2 gap-3 rounded-lg text-xl bg-hover-l dark:bg-gray-7 hover:bg-hover-l dark:hover:bg-hover-d  w-[38px]'>
+            <Plus size={24}/>
+        </button>
+
       </div>
 
     </div>
+    
+    {/* Middle */}
+    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-wrap flex-grow w-full gap-5`}>
 
-    {/**THIS IS NOT WORKING!!!!! */}
-    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-wrap w-full [container-type:inline-size]:w-[1200px]`}>
-
-    <div className="flex flex-col items-center w-full box-border bg-red-400 [container-inline-size:1200px]:w-[40%]">
+      {/* Pie Chart */}
+      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,35%,100%)] bg-blue-400`}>
+        <PieChart data={[
+          { value: 500, group: 'crypto',     name: 'Bitcoin' },
+          { value: 100, group: 'cash',       name: 'Cash' },
+          { value: 200, group: 'realEstate', name: 'White House' },
+          { value: 200, group: 'cash',       name: 'S&P500' },
+          { value: 300, group: 'cash',       name: 'NVIDIA' },
+          { value: 100, group: 'other',      name: 'Side Hussle' }
+        ]}/>
+      </div>
+      
+      {/* Chart */}
+      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,60%,100%)] bg-green-400`}>
         <PieChart data={[
           { value: 300, group: 'crypto',     name: 'Bitcoin' },
-          { value: 100, group: 'cash',       name: 'Cash' },         
+          { value: 100, group: 'cash',       name: 'Cash' },
           { value: 200, group: 'realEstate', name: 'White House' },
-          { value: 200, group: 'cash',        name: 'S&P500' },
-          { value: 300, group: 'cash',      name: 'NVIDIA' },
+          { value: 200, group: 'cash',       name: 'S&P500' },
+          { value: 300, group: 'cash',       name: 'NVIDIA' },
           { value: 100, group: 'other',      name: 'Side Hussle' }
         ]}/>
       </div>
 
-      <div className="flex flex-col items-center w-full box-border bg-green-400 [container-inline-size:1200px]:w-[60%]">
-        <PieChart data={[
-          { value: 300, group: 'crypto',     name: 'Bitcoin' },
-          { value: 100, group: 'cash',       name: 'Cash' },         
-          { value: 200, group: 'realEstate', name: 'White House' },
-          { value: 200, group: 'cash',        name: 'S&P500' },
-          { value: 300, group: 'cash',      name: 'NVIDIA' },
-          { value: 100, group: 'other',      name: 'Side Hussle' }
-        ]}/>
-      </div>
-
     </div>
-    {/**UNTIL HERE */}
-
-    <div className='flex flex-col w-full gap-5'>
-
-      <div className='h-[300px] bg-yellow-400'>
-        <p>holdings</p>
-      </div>
-
-      <div className='h-[180px] bg-purple-400'>
-        <p>cash</p>
-      </div>
-
+    
+    {/* Holdings */}
+    <div className='min-h-[1000px] bg-yellow-400'>
+      <p>holdings</p>
     </div>
+    
+    {/* Cash */}
+    <div className='flex flex-col min-h-[1000px] bg-purple-400 justify-end'>
+      <p>cash</p>
+      <p>cash</p>
+      <p>cash</p>
+      <p>cash</p>
+    </div>
+
+    {/* Padding for electron */}
+    {isElectron && <div className='min-h-[10px] w-full' />}
       
   </div>
 )};

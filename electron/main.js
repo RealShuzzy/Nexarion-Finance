@@ -20,7 +20,7 @@ function createMainWindow() {
   });
 
   mainWindow.loadFile(path.join(__dirname, '../react-ui/dist/index.html'));
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 }
 
 // Login window

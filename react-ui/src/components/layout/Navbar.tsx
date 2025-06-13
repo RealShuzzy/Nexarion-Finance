@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
         ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} p-[10px]
         bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px]
         ${styleType === "style1"
-         ? `w-[300px]` 
+         ? `w-[250px]` 
          : `w-[60px] items-center`}
       `}
     >
