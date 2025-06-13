@@ -73,7 +73,7 @@ const Dashboard: React.FC = () => {
     <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-wrap flex-grow w-full gap-5`}>
 
       {/* Pie Chart */}
-      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,35%,100%)] bg-blue-400`}>
+      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,35%,100%)] bg-gray-8 rounded-lg`}>
         <PieChart data={[
           { value: 500, group: 'crypto',     name: 'Bitcoin' },
           { value: 100, group: 'cash',       name: 'Cash' },
@@ -85,7 +85,7 @@ const Dashboard: React.FC = () => {
       </div>
       
       {/* Chart */}
-      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,60%,100%)] bg-green-400`}>
+      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,60%,100%)] bg-gray-8 rounded-lg`}>
         <PieChart data={[
           { value: 300, group: 'crypto',     name: 'Bitcoin' },
           { value: 100, group: 'cash',       name: 'Cash' },
@@ -99,12 +99,12 @@ const Dashboard: React.FC = () => {
     </div>
     
     {/* Holdings */}
-    <div className='min-h-[1000px] bg-yellow-400'>
+    <div className='min-h-[300px] bg-gray-8 rounded-lg'>
       <p>holdings</p>
     </div>
     
     {/* Cash */}
-    <div className='flex flex-col min-h-[1000px] bg-purple-400 justify-end'>
+    <div className='flex flex-col min-h-[300px] bg-gray-8 justify-end rounded-lg'>
       <p>cash</p>
       <p>cash</p>
       <p>cash</p>
