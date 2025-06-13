@@ -88,8 +88,12 @@ const PieChart: React.FC<PieChartProps> = ({
   };
 
   return (
-    <div className="relative">
-        <svg width={size} height={size}>
+    <div className="relative w-full h-full">
+        <svg 
+          viewBox={`0 0 ${size} ${size}`} 
+          className="w-full h-full" 
+          preserveAspectRatio="xMidYMid meet"
+          >
             <g transform={`translate(${size / 2}, ${size / 2})`}>
                 {sortedData.map((item, i) => {
                 const percent = item.value / total;

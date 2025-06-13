@@ -2,6 +2,7 @@
 import { Plus } from 'lucide-react';
 import React from 'react';
 import PieChart from './PieChart';
+import DataNumbers from './DataNumbers';
 
 const Dashboard: React.FC = () => {
 
@@ -70,24 +71,30 @@ const Dashboard: React.FC = () => {
     </div>
     
     {/* Middle */}
-    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-wrap flex-grow w-full gap-5`}>
+    <div className={`${isElectron ? 'min-h-[calc(100vh-140px)]' : 'min-h-[calc(100vh-110px)]'} flex flex-wrap w-full gap-5`}>
 
-      {/* Pie Chart */}
-      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,35%,100%)] bg-gray-8 rounded-lg`}>
+      {/* Pie Chart & Data Numbers */}
+      <div className={`flex flex-col w-[clamp(350px,35%,100%)] bg-gray-8 rounded-lg flex-grow`}>
+        <div className='justify-center h-[60%] w-full flex max-w-full p-4 bg-yellow-400 rounded-t-lg'>
+          <PieChart data={[
+            { value: 500, group: 'crypto',     name: 'Bitcoin' },
+            { value: 100, group: 'cash',       name: 'Cash' },
+            { value: 200, group: 'realEstate', name: 'White House' },
+            { value: 200, group: 'cash',       name: 'S&P500' },
+            { value: 300, group: 'cash',       name: 'NVIDIA' },
+            { value: 100, group: 'other',      name: 'Side Hussle' }
+          ]}/>
+        </div>
+
+        <div className='h-[40%] w-full'>
+          <DataNumbers />
+        </div>
+      </div>
+
+      {/* Chart */}
+      <div className={`flex flex-col items-center w-[clamp(350px,60%,100%)] bg-gray-8 rounded-lg flex-grow`}>
         <PieChart data={[
           { value: 500, group: 'crypto',     name: 'Bitcoin' },
-          { value: 100, group: 'cash',       name: 'Cash' },
-          { value: 200, group: 'realEstate', name: 'White House' },
-          { value: 200, group: 'cash',       name: 'S&P500' },
-          { value: 300, group: 'cash',       name: 'NVIDIA' },
-          { value: 100, group: 'other',      name: 'Side Hussle' }
-        ]}/>
-      </div>
-      
-      {/* Chart */}
-      <div className={`flex flex-col flex-grow items-center w-[clamp(350px,60%,100%)] bg-gray-8 rounded-lg`}>
-        <PieChart data={[
-          { value: 300, group: 'crypto',     name: 'Bitcoin' },
           { value: 100, group: 'cash',       name: 'Cash' },
           { value: 200, group: 'realEstate', name: 'White House' },
           { value: 200, group: 'cash',       name: 'S&P500' },
