@@ -71,11 +71,6 @@ const Dashboard: React.FC = () => {
 
     </div>
 
-
-
-
-
-
     <div className={`grid grid-cols-[40%_60%]
               s:grid-cols-1 s:grid-rows-[40%_20%_40%] s:h-[1500px]
               m:grid-cols-1 m:grid-rows-[40%_20%_40%]  m:h-[1500px]
@@ -83,7 +78,7 @@ const Dashboard: React.FC = () => {
               xl:grid-cols-[40%_60%] xl:grid-rows-[60%_40%] ${isElectron ? 'xl:h-[calc(100vh-140px)]' : 'xl:h-[calc(100vh-110px)]'}
               max-w-full`}>
 
-    <div className="bg-red-400 order-1">
+    <div className="order-1">
       <PieChart data={[
               { value: 500, group: 'crypto',     name: 'Bitcoin' },
               { value: 100, group: 'cash',       name: 'Cash' },
@@ -94,7 +89,7 @@ const Dashboard: React.FC = () => {
             ]}/>
     </div>
 
-    <div className="bg-yellow-400 s:order-2 m:order-2 l:order-3 xl:order-3">
+    <div className="bg-gray-9 s:order-2 m:order-2 l:order-3 xl:order-3 p-5">
       <DataNumbers />
     </div>
 
