@@ -76,12 +76,12 @@ const Dashboard: React.FC = () => {
 
 
 
-    <div className="grid gap-5  
-              s:grid-cols-1 s:grid-rows-3 
-              m:grid-cols-1 m:grid-rows-3
-              l:grid-cols-2 l:grid-rows-2
-              xl:grid-cols-2 xl:grid-rows-2
-              max-w-full">
+    <div className={`grid grid-cols-[40%_60%]
+              s:grid-cols-1 s:grid-rows-[40%_20%_40%] s:h-[1500px]
+              m:grid-cols-1 m:grid-rows-[40%_20%_40%]  m:h-[1500px]
+              l:grid-cols-[40%_60%] l:grid-rows-[60%_40%] ${isElectron ? 'l:h-[calc(100vh-140px)]' : 'l:h-[calc(100vh-110px)]'}
+              xl:grid-cols-[40%_60%] xl:grid-rows-[60%_40%] ${isElectron ? 'xl:h-[calc(100vh-140px)]' : 'xl:h-[calc(100vh-110px)]'}
+              max-w-full`}>
 
     <div className="bg-red-400 order-1">
       <PieChart data={[
@@ -118,8 +118,20 @@ const Dashboard: React.FC = () => {
   <div className="flex flex-col gap-5">
     <div className="bg-yellow-200">
       <p>holdings</p>
+      <p>holdings</p>
+      <p>holdings</p>
+      <p>holdings</p>
+      <p>holdings</p>
+      <p>holdings</p>
+      <p>holdings</p>
     </div>
     <div className="bg-purple-200">
+      <p>cash</p>
+      <p>cash</p>
+      <p>cash</p>
+      <p>cash</p>
+      <p>cash</p>
+      <p>cash</p>
       <p>cash</p>
     </div>
   </div>
