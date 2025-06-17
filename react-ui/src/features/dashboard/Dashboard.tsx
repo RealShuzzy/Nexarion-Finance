@@ -89,7 +89,7 @@ const Dashboard: React.FC = () => {
             ]}/>
     </div>
 
-    <div className="bg-gray-9 s:order-2 m:order-2 l:order-3 xl:order-3 p-5">
+    <div className="s:order-2 m:order-2 l:order-3 xl:order-3 p-5">
       <DataNumbers />
     </div>
 

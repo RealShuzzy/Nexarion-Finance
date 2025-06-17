@@ -27,9 +27,9 @@ const DataNumbers: React.FC = () => {
 
     return(
         <>
-        <div className="bg-gray-9 h-[30%] flex flex-col font-[Outfit,Arial,Helvetica,sans-serif]">
+        <div className="h-[30%] flex flex-col font-[Outfit,Arial,Helvetica,sans-serif]">
             <div>
-                <p className="text-[14px] font-semibold leading-[22px] text-white/50">Current Networth</p>
+                <p className="text-[14px] font-semibold leading-[22px] text-gray-4">Current Networth</p>
             </div>
             <div className="flex flex-row h-[34px] gap-5">
                 <p className="text-[26px] font-semibold leading-[34px]">{data['net-worth']}{data['currency']}</p>
@@ -40,32 +40,32 @@ const DataNumbers: React.FC = () => {
         <div className="h-[70%] grid grid-rows-3 grid-cols-2">
 
             <div className="order 1">
-                <p className="text-[14px] font-semibold leading-[22px] text-white/50">Cash</p>
+                <p className="text-[14px] font-semibold leading-[22px] text-gray-4">Cash</p>
                 <p className="text-[16px] font-medium leading-[24px]">{data['cash']}{data['currency']}</p>
             </div>
 
             <div className="order 2">
-                <p className="text-[14px] font-semibold leading-[22px] text-white/50">Holdings</p>
+                <p className="text-[14px] font-semibold leading-[22px] text-gray-4">Holdings</p>
                 <p className="text-[16px] font-medium leading-[24px]">{data['holdings']}{data['currency']}</p>
             </div>
 
             <div className="order 3">
-                <p className="text-[14px] font-semibold leading-[22px] text-white/50">Price gains</p>
+                <p className="text-[14px] font-semibold leading-[22px] text-gray-4">Price gains</p>
                 <p className={`${data['price-gains-color'] === '+' ? 'text-green-400' : 'text-red-400'} text-[16px] font-medium leading-[24px]`}>{data['price-gains']}{data['currency']}</p>
             </div>
 
             <div className="order 4">
-                <p className="text-[14px] font-semibold leading-[22px] text-white/50">IRR</p>
+                <p className="text-[14px] font-semibold leading-[22px] text-gray-4">IRR</p>
                 <p className={`${data['internal-rate-of-return-color'] === '+' ? 'text-green-400' : 'text-red-400'} text-[16px] font-medium leading-[24px]`}>{data['internal-rate-of-return-color'] === '+' ? '+' : ''}{data['internal-rate-of-return']}%</p>
             </div>
 
             <div className="order 5">
-                <p className="text-[14px] font-semibold leading-[22px] text-white/50">Dividends</p>
+                <p className="text-[14px] font-semibold leading-[22px] text-gray-4">Dividends</p>
                 <p className="text-green-400 text-[16px] font-medium leading-[24px]">{data['dividends']}{data['currency']}</p>
             </div>
 
             <div className="order 6">
-                <p className="text-[14px] font-semibold leading-[22px] text-white/50">Realized profits</p>
+                <p className="text-[14px] font-semibold leading-[22px] text-gray-4">Realized profits</p>
                 <p className={`${data['realized-profits-color'] === '+' ? 'text-green-400' : 'text-red-400'} text-[16px] font-medium leading-[24px]`}>{data['realized-profits']}{data['currency']}</p>
             </div>
         </div>
