@@ -31,7 +31,8 @@
       "@layouts/*": ["layouts/*"],
       "@routes/*": ["routes/*"],
       "@types/*": ["types/*"],
-      "@features/*": ["features/*"]
+      "@features/*": ["features/*"],
+      "@data/*": ["features/*"],
     }
   },
   "include": ["src"]

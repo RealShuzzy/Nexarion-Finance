@@ -27,7 +27,7 @@ const DataNumbers: React.FC = () => {
 
     return(
         <>
-        <div className="h-[30%] flex flex-col font-[Outfit,Arial,Helvetica,sans-serif]">
+        <div className="h-[30%] flex flex-col">
             <div>
                 <p className="text-[14px] font-semibold leading-[22px] text-gray-4">Current Networth</p>
             </div>

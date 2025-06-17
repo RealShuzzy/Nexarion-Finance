@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
       navbarStyle = (
         `transition-[width] duration-500 ease-in-out
         fixed float-left flex flex-col justify-center
-        bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px]
+        bg-primary dark:bg-gray-10 text-white border-primary dark:border-gray-7 border-r-[2px]
         ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} p-[10px] w-[250px]`
       )
       break
@@ -163,7 +163,7 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
       navbarStyle = (
         `transition-[width] duration-500 ease-in-out
         fixed float-left flex flex-col justify-center
-        bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px]
+        bg-primary dark:bg-gray-10 text-white border-primary dark:border-gray-7 border-r-[2px]
         ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} p-[10px] w-[60px] items-center`
       )
       break
@@ -184,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
       navbarStyle = (
         `transition-[width] duration-500 ease-in-out
         fixed flex justify-center
-        bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px]
+        bg-primary dark:bg-gray-10 text-white border-primary dark:border-gray-7 border-r-[2px]
         h-[60px] p-[10px] w-full items-center`
       )
       break
