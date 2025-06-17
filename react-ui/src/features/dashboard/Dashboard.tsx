@@ -71,11 +71,11 @@ const Dashboard: React.FC = () => {
 
     </div>
 
-    <div className={`grid grid-cols-[40%_60%]
+    <div className={`grid grid-cols-[45%_55%]
               s:grid-cols-1 s:grid-rows-[40%_20%_40%] s:h-[1500px]
               m:grid-cols-1 m:grid-rows-[40%_20%_40%]  m:h-[1500px]
-              l:grid-cols-[40%_60%] l:grid-rows-[60%_40%] ${isElectron ? 'l:h-[calc(100vh-140px)]' : 'l:h-[calc(100vh-110px)]'}
-              xl:grid-cols-[40%_60%] xl:grid-rows-[60%_40%] ${isElectron ? 'xl:h-[calc(100vh-140px)]' : 'xl:h-[calc(100vh-110px)]'}
+              l:grid-cols-[45%_55%] l:grid-rows-[55%_45%] ${isElectron ? 'l:h-[calc(100vh-140px)]' : 'l:h-[calc(100vh-110px)]'}
+              xl:grid-cols-[35%_65%] xl:grid-rows-[60%_40%] ${isElectron ? 'xl:h-[calc(100vh-140px)]' : 'xl:h-[calc(100vh-110px)]'}
               max-w-full`}>
 
     <div className="order-1">
