@@ -32,7 +32,7 @@
       "@routes/*": ["routes/*"],
       "@types/*": ["types/*"],
       "@features/*": ["features/*"],
-      "@data/*": ["features/*"],
+      "@data/*": ["data/*"],
     }
   },
   "include": ["src"]

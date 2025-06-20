@@ -4,6 +4,7 @@ import Depot from '@features/accounts/Depots'
 import { useCurrencyFormatter } from '@components/common/CurrencyFormatter'
 import { data, icons } from '@data/depots'
 import { useStyle } from '@components/common/StyleContext'
+import Account from './Accounts'
 
 const Portfolios_and_Accounts: React.FC = () => {
   const { styleType } = useStyle()
@@ -63,19 +64,23 @@ const Portfolios_and_Accounts: React.FC = () => {
           {data.depots.map((depot, idx) => (
             <Depot key={idx} depot={depot} icon={icons[depot.bank]} formatCurrency={formatCurrency} />
           ))}
+
         </div>
 
-        {/* Your accounts section... */}
-        <div className="bg-green-400 flex flex-col">
-          <div className="h-[70px] bg-yellow-400">
-            <button className="flex gap-2 hover:bg-hover-l dark:hover:bg-hover-d">
+        <div className="flex flex-col rounded-2xl bg-gray-10">
+          <div className="h-[70px] flex items-center p-3 text-[20px] font-semibold leading-[28px] ">
+            <button className="flex gap-2 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <p>Accounts</p>
               <Plus />
             </button>
+            <div className="flex-grow" />
+            <p className="pr-3">{formatCurrency(data.depotsTotal)}</p>
           </div>
-          <div className="h-[100px] bg-purple-400">1st account</div>
-          <div className="h-[100px] bg-green-400">2nd account</div>
-          <div className="h-[100px] bg-red-400">3rd account</div>
+
+          {data.depots.map((depot, idx) => (
+            <Account key={idx} depot={depot} icon={icons[depot.bank]} formatCurrency={formatCurrency} />
+          ))}
+
         </div>
       </div>
     </div>
