@@ -2,14 +2,14 @@ import scalable from '@assets/bank-icon-scalable.jpeg'
 import dkb from '@assets/bank-icon-dkb.png'
 import ing from '@assets/bank-icon-ing.png'
 
-export const icons: Record<string, string> = {
+export const accountIcons: Record<string, string> = {
   'Scalable Capital': scalable,
   'Deutsche Kredit Bank': dkb,
   'Internationale Nederlanden Groep': ing,
 };
 
-export const data = {
-  currency: 'EUR',
+export const accountData = {
+  currency: 'USD',
   depotsTotal: 3456.78,
   accountsTotal: 8765.43,
   accountBank: ['Deutsche Kredit Bank','Scalable Capital','Internationale Nederlanden Groep'],
@@ -23,7 +23,23 @@ export const data = {
       graph: 'wip',
     },
     {
-      currency: 'EUR',
+      currency: 'USD',
+      name: 'ING Depot',
+      bank: 'Internationale Nederlanden Groep',
+      balance: 7998.73,
+      lastUpdate: '12.06.2025',
+      graph: 'wip',
+    },
+    {
+      currency: 'USD',
+      name: 'ING Depot',
+      bank: 'Internationale Nederlanden Groep',
+      balance: 7998.73,
+      lastUpdate: '12.06.2025',
+      graph: 'wip',
+    },
+    {
+      currency: 'USD',
       name: 'ING Depot',
       bank: 'Internationale Nederlanden Groep',
       balance: 7998.73,
