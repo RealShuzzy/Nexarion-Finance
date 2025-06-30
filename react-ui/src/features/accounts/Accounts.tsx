@@ -15,17 +15,17 @@ type AccountProps = {
 }
 
 const Account: React.FC<AccountProps> = ({ account, icon }) => (
-  <div className="flex flex-col gap-3 p-3 pl-5 border-gray-7 border-t-[2px] h-[100px] justify-center">
+  <div className="flex flex-col gap-3 p-3 pl-5 text-black dark:text-white dark:border-gray-7 border-t-[2px] h-[100px] justify-center">
     
     {/* Account */}
     <div className="flex flex-row h-1/2">
 
       <button className='w-[50px] group flex justify-center items-center'>
         <img src={icon} alt={account.bank} className="rounded-lg group-hover:hidden border-orange-400 border-2" />
-        <RotateCcw size={50} strokeWidth={2.5}  className='group-hover:block hidden bg-hover-d rounded-lg p-3'/>
+        <RotateCcw size={50} strokeWidth={2.5}  className='group-hover:block hidden bg-primary rounded-lg p-3'/>
       </button>
 
-      <div className="flex flex-col justify-center bg-gray-10 pl-3">
+      <div className="flex flex-col justify-center dark:bg-gray-10 pl-3">
         <p className="font-semibold text-[18px] leading-[22px]">{account.name}</p>
         <p className="font-semibold text-gray-4 text-[14px] leading-[22px]">{account.bank}</p>
       </div>

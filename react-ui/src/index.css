@@ -18,6 +18,10 @@ html, body, #root {
 
 :root {
   --color-primary: 108 149 247;
+  --color-primary-d: 88 122 204;
+  --color-primary-d2: 75 104 173;
+
+
   --color-secondary: 25 190 220;
 
   --color-gray-1: 226 226 226;
