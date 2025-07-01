@@ -22,7 +22,7 @@ const Account: React.FC<AccountProps> = ({ account, icon }) => (
 
       <button className='w-[50px] group flex justify-center items-center'>
         <img src={icon} alt={account.bank} className="rounded-lg group-hover:hidden border-orange-400 border-2" />
-        <RotateCcw size={50} strokeWidth={2.5}  className='group-hover:block hidden bg-primary rounded-lg p-3'/>
+        <RotateCcw size={50} strokeWidth={2.5}  className='group-hover:block hidden bg-primary rounded-lg p-3 text-white'/>
       </button>
 
       <div className="flex flex-col justify-center dark:bg-gray-10 pl-3">

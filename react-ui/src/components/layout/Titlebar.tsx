@@ -12,7 +12,7 @@ const CustomTitleBar: React.FC = () => {
 
   return (
     <div
-      className='relative flex justify-center items-center dark:bg-gray-10 dark:border-gray-7 border-b-[1px] border-black w-full min-h-[30px] text-black dark:text-white'
+      className='relative flex justify-center items-center bg-primary dark:bg-gray-10 dark:border-gray-7 border-b-[1px] border-white w-full min-h-[30px] text-white'
       style={{ WebkitAppRegion: 'drag' } as React.CSSProperties & { WebkitAppRegion: string }}
     >
       <div className="font-semibold text-sm">Nexarion</div>

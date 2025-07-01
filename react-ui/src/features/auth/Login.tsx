@@ -22,7 +22,7 @@ const Login: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://shuzzy.duckdns.org:8000/login', {
+      const response = await fetch('http://shuzzy.duckdns.org:8000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

@@ -72,20 +72,20 @@ const Dashboard: React.FC = () => {
     </div>
 
     <div className={`grid grid-cols-[45%_55%]
-              s:grid-cols-1 s:grid-rows-[40%_20%_40%] s:h-[1500px]
-              m:grid-cols-1 m:grid-rows-[40%_20%_40%]  m:h-[1500px]
+              s:grid-cols-1 s:grid-rows-[25%_25%_50%] s:h-[1500px]
+              m:grid-cols-1 m:grid-rows-[30%_25%_45%]  m:h-[1500px]
               l:grid-cols-[45%_55%] l:grid-rows-[55%_45%] ${isElectron ? 'l:h-[calc(100vh-140px)]' : 'l:h-[calc(100vh-110px)]'}
               xl:grid-cols-[35%_65%] xl:grid-rows-[60%_40%] ${isElectron ? 'xl:h-[calc(100vh-140px)]' : 'xl:h-[calc(100vh-110px)]'}
               max-w-full`}>
 
     <div className="order-1">
       <PieChart data={[
-              { value: 500, group: 'crypto',     name: 'Bitcoin' },
-              { value: 100, group: 'cash',       name: 'Cash' },
-              { value: 200, group: 'realEstate', name: 'White House' },
-              { value: 200, group: 'cash',       name: 'S&P500' },
-              { value: 300, group: 'cash',       name: 'NVIDIA' },
-              { value: 100, group: 'other',      name: 'Side Hussle' }
+              { value: 5000, group: 'crypto',     name: 'Bitcoin' },
+              { value: 3000, group: 'cash',       name: 'Cash' },
+              { value: 10000, group: 'realEstate', name: 'White House' },
+              { value: 15000, group: 'etf',       name: 'S&P500' },
+              { value: 1250, group: 'stock',       name: 'NVIDIA' },
+              { value: 5000, group: 'other',      name: 'Side Hussle' }
             ]}/>
     </div>
 

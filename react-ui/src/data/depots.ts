@@ -42,13 +42,13 @@ export const depotData = {
     },
     {
       currency: 'EUR',
-      name: 'Scalable Capital Depot',
-      bank: 'Scalable Capital',
+      name: 'DKB Depot',
+      bank: 'Deutsche Kredit Bank',
       balance: 6098.73,
       lastUpdate: '16.06.2025',
       graph: 'wip',
       clearingAccount: {
-        name: 'Scalable Capital Clearing Account',
+        name: 'DKB Clearing Account',
         balance: 18.73,
         graph: 'wip',
       },

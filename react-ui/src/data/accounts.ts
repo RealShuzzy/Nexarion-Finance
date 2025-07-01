@@ -32,8 +32,8 @@ export const accountData = {
     },
     {
       currency: 'USD',
-      name: 'ING Depot',
-      bank: 'Internationale Nederlanden Groep',
+      name: 'DKB Depot',
+      bank: 'Deutsche Kredit Bank',
       balance: 7998.73,
       lastUpdate: '12.06.2025',
       graph: 'wip',

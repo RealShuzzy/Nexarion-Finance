@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 // Icons
 import { ChartNoAxesCombined, EllipsisVertical, Landmark, LayoutDashboard, LogOut, PanelLeft, Search, Settings, User, Wallet} from "lucide-react";
-import logo from '@assets/Logo.svg'
+import logo from '@assets/logo.svg'
+import logo_dark from '@assets/logo_dark.svg'
 import banner_d from '@assets/Banner_Dark.svg'
 
 // Functions
@@ -106,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
       navbarStyle = (
         `transition-[width] duration-500 ease-in-out
         fixed float-left flex flex-col justify-center
-        bg-primary dark:bg-gray-10 text-white border-primary dark:border-gray-7 border-r-[2px]
+        bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px] shadow-[0_0_15px_10px_rgba(0,0,0,0.05)]
         ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} p-[10px] w-[250px]`
       )
       break
@@ -116,7 +117,8 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
         <div className="group flex">
 
           <button onClick={toggleStyle} className="flex justify-center items-center w-[38px] h-[38px]">
-            <img src={logo} alt="Normal Logo" className="group-hover:hidden block w-[32px] h-[32px]" />
+            <img src={logo} alt="Normal Logo" className="group-hover:hidden dark:hidden block w-[32px] h-[32px]" />
+            <img src={logo_dark} alt="Normal Logo" className="group-hover:hidden dark:block hidden w-[32px] h-[32px]" />
             <PanelLeft size={38} className="hidden group-hover:block hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg"/>
           </button>
 
@@ -163,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
       navbarStyle = (
         `transition-[width] duration-500 ease-in-out
         fixed float-left flex flex-col justify-center
-        bg-primary dark:bg-gray-10 text-white border-primary dark:border-gray-7 border-r-[2px]
+        bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px] shadow-[0_0_15px_10px_rgba(0,0,0,0.05)]
         ${isElectron ? 'h-[calc(100vh-30px)]' : 'h-screen'} p-[10px] w-[60px] items-center`
       )
       break
@@ -184,8 +186,8 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
       navbarStyle = (
         `transition-[width] duration-500 ease-in-out
         fixed flex justify-center
-        bg-primary dark:bg-gray-10 text-white border-primary dark:border-gray-7 border-r-[2px]
-        h-[60px] p-[10px] w-full items-center`
+        bg-primary dark:bg-gray-10 text-white border-white dark:border-gray-7 border-r-[2px]
+        h-[60px] p-[10px] w-full items-center shadow-[0_0_15px_10px_rgba(0,0,0,0.05)]`
       )
       break
     }
@@ -199,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ styleType, toggleStyle }) => {
     {navbar}
 
     {openDropdown && (
-      <div className={`absolute w-48 bottom-[10px] rounded-lg shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] bg-white dark:bg-gray-9 border-[2px] border-white dark:border-gray-7 text-black dark:text-white
+      <div className={`absolute w-48 bottom-[10px] rounded-lg shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] bg-white dark:bg-gray-9 dark:border-[2px] border-white dark:border-gray-7 text-black dark:text-white
         ${styleType === "style1"
         ? "left-[240px]"
         : "left-[50px]"

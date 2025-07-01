@@ -27,7 +27,7 @@ const Portfolios_and_Accounts: React.FC = () => {
             : styleType === 'style2'
             ? 'w-[calc(100%-60px)]'
             : 'w-full'
-        } fixed flex h-[70px] bg-primary dark:bg-gray-10 border-b-[2px] dark:border-gray-7 border-white items-center p-[10px] z-50`}
+        } fixed flex h-[70px] bg-primary dark:bg-gray-10 border-b-[2px] dark:border-gray-7 border-white items-center p-[10px] z-50 shadow-[0_0_15px_10px_rgba(0,0,0,0.05)]`}
       >
         <div>
           <p className="text-[20px] font-semibold leading-[28px]">Portfolios & Accounts</p>
@@ -57,9 +57,9 @@ const Portfolios_and_Accounts: React.FC = () => {
       </div>
 
       {/* Scrollable Content */}
-      <div className="w-full pt-[80px] p-[40px] gap-10 flex flex-col">
+      <div className="w-full pt-[110px] p-[40px] gap-10 flex flex-col">
         {/* Depot Section */}
-        <div className="flex flex-col rounded-2xl dark:bg-gray-10 mt-[30px] rounded-lg shadow-[0_0_15px_10px_rgba(0,0,0,0.1)]">
+        <div className="flex flex-col rounded-2xl dark:bg-gray-10 rounded-lg shadow-[0_0_15px_10px_rgba(0,0,0,0.075)]">
           <div className="h-[70px] flex items-center p-3 text-[20px] font-semibold leading-[28px] text-black dark:text-white rounded-t-lg">
             <button className="flex gap-2 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <p>Depot</p>
@@ -80,7 +80,7 @@ const Portfolios_and_Accounts: React.FC = () => {
         </div>
 
         {/* Account Section */}
-        <div className="flex flex-col rounded-2xl dark:bg-gray-10 mt-[30px] rounded-lg shadow-[0_0_15px_10px_rgba(0,0,0,0.1)]">
+        <div className="flex flex-col rounded-2xl dark:bg-gray-10 rounded-lg shadow-[0_0_15px_10px_rgba(0,0,0,0.075)]">
           <div className="h-[70px] flex items-center p-3 text-[20px] font-semibold leading-[28px] text-black dark:text-white">
             <button className="flex gap-2 hover:bg-hover-l dark:hover:bg-hover-d p-2 rounded-lg">
               <p>Accounts</p>

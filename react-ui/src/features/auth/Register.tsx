@@ -26,7 +26,7 @@ const Login: React.FC = () => {
   setSuccessMessage('');
 
   try {
-    const response = await fetch('http://shuzzy.duckdns.org:8000/register', {
+    const response = await fetch('http://shuzzy.duckdns.org:8000/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const Login: React.FC = () => {
     setSuccessMessage('Account created successfully!');
 
     try {
-      const response = await fetch('http://shuzzy.duckdns.org:8000/login', {
+      const response = await fetch('http://shuzzy.duckdns.org:8000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
